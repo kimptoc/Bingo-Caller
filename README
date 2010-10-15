@@ -4,13 +4,12 @@ Test site on Heroku is here http://bingo-caller.heroku.com/games
 
 To Do
 
-- proper layout, jquery/960.gs
-
 - call out numbers, <audio>
 
 - js to auto advance, pause option
 
 
+- better message when all numbers called
 
 - put last number in a ball
 
