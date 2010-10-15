@@ -28,7 +28,7 @@
 
 <div class="grid_6" id="accordionTR">
   <h3><a href="#">Last Few Balls</a></h3>
-  <div>
+  <div style="font-size:larger">
   <ul>
   <% @game.called_numbers.reverse[0..9].each { | cn | %>
     <li><%= cn.called_ball %></li>
@@ -57,7 +57,7 @@
             ball_style = "font-weight:bold;color:yellow;"
         end
         %>
-      <span style="<%= ball_style %>">
+      <span style="<%= ball_style %>; font-size:larger">
         <%= ball %><br>
       </span>
     <% } %>
