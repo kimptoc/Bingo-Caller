@@ -1,0 +1,46 @@
+Heroku tips
+
+>> install heroku
+
+gem install heroku
+
+
+>> Remove app from Heroku
+
+heroku destroy --app bingo-caller
+
+>> Add app to Heroku
+
+heroku create bingo-caller
+
+
+
+
+>> Push changes to Heroku
+
+git push heroku
+git push heroku master
+
+>> Update db on Heroku
+
+heroku rake db:migrate
+
+
+
+>> Restart Heroku app, useful after big changes, esp DB.
+
+heroku restart
+
+
+>> rename app
+
+heroku rename [newname]
+
+
+>> Map a local git to the Heroku app
+
+git remote add heroku git@heroku.com:bingo-caller.git
+
+>> unmap remote link to heroku
+
+git remote rm heroku
