@@ -25,6 +25,8 @@ class GamesController < ApplicationController
   def show
     @game = Game.find(params[:id])
 
+    @caller_sound = "/callers/chris1/#{@game.last_ball_called}.mp3"
+
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @game }
