@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101014210013) do
+ActiveRecord::Schema.define(:version => 20101015210558) do
 
   create_table "called_numbers", :force => true do |t|
     t.integer  "game_id"
@@ -20,8 +20,37 @@ ActiveRecord::Schema.define(:version => 20101014210013) do
     t.datetime "updated_at"
   end
 
+  create_table "callers", :force => true do |t|
+    t.string   "email",                               :default => "", :null => false
+    t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
+    t.string   "password_salt",                       :default => "", :null => false
+    t.string   "reset_password_token"
+    t.string   "remember_token"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",                       :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+  end
+
+  add_index "callers", ["email"], :name => "index_callers_on_email", :unique => true
+  add_index "callers", ["reset_password_token"], :name => "index_callers_on_reset_password_token", :unique => true
+
   create_table "games", :force => true do |t|
     t.integer  "max_balls"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "players", :force => true do |t|
+    t.integer  "game_id"
+    t.string   "name"
+    t.integer  "caller_id"
+    t.integer  "cards_played"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -29,13 +29,27 @@
 </head>
 <body>
 
+<h4><a href="/">BINGO CALLER</a></h4>               
+
+<!-- layouts/application.html.erb -->
+<div id="user_nav" style="float:right">
+  <% if caller_signed_in? %>
+    Signed in as <%= current_caller.email %>. Not you?
+    <%= link_to "Sign out", destroy_caller_session_path %>
+    <!--< % = link_to "Account", caller_edit_path % >-->
+  <% else %>
+    <%= link_to "Sign up", new_caller_registration_path %> or <%= link_to "sign in", new_caller_session_path %>
+  <% end %>
+</div>
+
+<!--<p id="notice"><%= notice %></p>-->
+<p id="notice"><%= flash %></p>
+
+
 <%= yield %>
 
-<div class="container_12">
-<div class="grid_8">&nbsp; </div>
-<div class="grid_4" style="font-size:smaller;">
+<div style="float:right">
     The code for this site is stored on the <a href="http://github.com/kimptoc/Bingo-Caller">GitHubs</a>
-</div>
 </div>
 
 </body>

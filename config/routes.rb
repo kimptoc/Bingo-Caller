@@ -1,4 +1,9 @@
 BingoCaller::Application.routes.draw do
+
+  root :to => "games#index"
+
+  devise_for :callers
+
   resources :called_numbers
 
   resources :games

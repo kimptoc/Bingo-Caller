@@ -1,5 +1,7 @@
 class Game < ActiveRecord::Base
   has_many :called_numbers
+  has_many :players
+  belongs_to :caller
 
   def has_been_called? ball
 #    puts "Checking "+ball.to_s

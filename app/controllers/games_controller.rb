@@ -1,5 +1,6 @@
 class GamesController < ApplicationController
 
+  before_filter :authenticate_caller!, :except => [:show, :index]
 
    def next_ball
     @game = Game.find(params[:id])

@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  game_id: 1
+  name: MyString
+  caller_id: 1
+  cards_played: 1
+
+two:
+  game_id: 1
+  name: MyString
+  caller_id: 1
+  cards_played: 1
