@@ -13,6 +13,7 @@ To Do
 
 - better ui - bigger current number, especially on iPad
 
+- support for multiple callers, choosing which to use and random from all
 
 - better message when all numbers called
 
@@ -20,3 +21,6 @@ To Do
 
 - add users and link games to users, public/private options
 - only allow creating user to advance balls in a game
+
+
+- allow to create/upload new sound files from website... how to check the sounds are good/valid...
