@@ -15,6 +15,7 @@ To Do
 
 - support for multiple callers, choosing which to use and random from all
 
+- validate max number on game
 - better message when all numbers called
 
 - put last number in a ball
@@ -22,8 +23,8 @@ To Do
 - add users and link games to users, public/private options
 - only allow creating user to advance balls in a game
 
-- keep a track of winners (first line/full house), perhaps have concept of session/evening, so if a little money
-is involved, can keep track of things...
+- keep a track of players/winners (first line/full house), perhaps have concept of session/evening, so if a little money
+is involved, can keep track of things... also number of cards played per game
 
 
 - allow to create/upload new sound files from website... how to check the sounds are good/valid...

@@ -16,10 +16,27 @@
   <%= javascript_include_tag 'jquery-1.4.2.min' %>
   <%= javascript_include_tag 'jquery-ui-1.8.5.custom.min' %>
   <%= csrf_meta_tag %>
+
+<script type="text/javascript">
+	$(function() {
+		$( "a" ).button();
+
+    });
+
+	</script>
+
+
 </head>
 <body>
 
 <%= yield %>
+
+<div class="container_12">
+<div class="grid_8">&nbsp; </div>
+<div class="grid_4" style="font-size:smaller;">
+    The code for this site is stored on the <a href="http://github.com/kimptoc/Bingo-Caller">GitHubs</a>
+</div>
+</div>
 
 </body>
 </html>
