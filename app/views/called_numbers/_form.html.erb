@@ -1,0 +1,29 @@
+<%= form_for(@called_number) do |f| %>
+  <% if @called_number.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@called_number.errors.count, "error") %> prohibited this called_number from being saved:</h2>
+
+      <ul>
+      <% @called_number.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :game_id %><br />
+    <%= f.text_field :game_id %>
+  </div>
+  <div class="field">
+    <%= f.label :called_ball %><br />
+    <%= f.text_field :called_ball %>
+  </div>
+  <div class="field">
+    <%= f.label :called_time %><br />
+    <%= f.datetime_select :called_time %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

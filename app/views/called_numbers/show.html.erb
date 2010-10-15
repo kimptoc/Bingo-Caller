@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Game:</b>
+  <%= @called_number.game_id %>
+</p>
+
+<p>
+  <b>Called ball:</b>
+  <%= @called_number.called_ball %>
+</p>
+
+<p>
+  <b>Called time:</b>
+  <%= @called_number.called_time %>
+</p>
+
+
+<%= link_to 'Edit', edit_called_number_path(@called_number) %> |
+<%= link_to 'Back', called_numbers_path %>

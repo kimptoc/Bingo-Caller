@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  game_id: 1
+  called_ball: 1
+  called_time: 2010-10-14 22:00:13
+
+two:
+  game_id: 1
+  called_ball: 1
+  called_time: 2010-10-14 22:00:13

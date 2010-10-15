@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<div>
+<%= @game.last_ball_called %>
+
+<%= link_to 'Next Ball',:action => :next_ball %>
+  
+</div>
+
+
+<div>
+  <ul>
+  <% @game.called_numbers.reverse.each { | cn | %>
+    <li><%= cn.called_ball %></li>
+  <% } %>
+  </ul>
+</div>
+
+<div>
+  <ul>
+    <% (1..@game.max_balls).each { | ball | %>
+        <%
+           li_style = "lfklfkdfl"
+        if @game.has_been_called? ball
+            li_style = "font-weight:bold;"
+        else
+            li_style = "color:lightblue;"
+        end
+        %>
+      <li style="<%= li_style %>">
+        <%= ball %>
+      </li>
+    <% } %>
+  </ul>
+</div>
+
+
+<p>
+  <b>Max balls:</b>
+  <%= @game.max_balls %>
+</p>
+
+
+<%= link_to 'Edit', edit_game_path(@game) %> |
+<%= link_to 'Back', games_path %>

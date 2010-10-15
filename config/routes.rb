@@ -1,4 +1,10 @@
 BingoCaller::Application.routes.draw do
+  resources :called_numbers
+
+  resources :games
+
+  match 'games/:id/next_ball' => 'games#next_ball'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

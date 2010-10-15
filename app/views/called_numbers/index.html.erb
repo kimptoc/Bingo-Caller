@@ -1,0 +1,27 @@
+<h1>Listing called_numbers</h1>
+
+<table>
+  <tr>
+    <th>Game</th>
+    <th>Called ball</th>
+    <th>Called time</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @called_numbers.each do |called_number| %>
+  <tr>
+    <td><%= called_number.game_id %></td>
+    <td><%= called_number.called_ball %></td>
+    <td><%= called_number.called_time %></td>
+    <td><%= link_to 'Show', called_number %></td>
+    <td><%= link_to 'Edit', edit_called_number_path(called_number) %></td>
+    <td><%= link_to 'Destroy', called_number, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Called number', new_called_number_path %>
