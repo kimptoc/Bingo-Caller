@@ -1,14 +1,19 @@
 This is a basic bingo calling web app, written in Rails 3.
 
+The aim is for it to run on the iPad, anywhere is a bonus, for now.
+
 Test site on Heroku is here http://bingo-caller.heroku.com/games
 
+
 To Do
+
+- better audio player/ ui - javascript based auto play not always working...
+
 
 - audio files for 13-90
 
 - js to auto advance, pause option
 
-- better audio play ui
 
 - better message when all numbers called
 
