@@ -11,47 +11,29 @@ To Do
 
 - js to auto advance, pause option
 
-- better ui - bigger current number, especially on iPad
-
 - support for multiple callers, choosing which to use and random from all
 
-- validate max number on game
-- better message when all numbers called
-
-- put last number in a ball
-
-- add users and link games to users, public/private options
-- only allow creating user to advance balls in a game
+- only allow creater of game to advance to next ball
 
 - keep a track of players/winners (first line/full house), perhaps have concept of session/evening, so if a little money
 is involved, can keep track of things... also number of cards played per game
 
 
+
+
+- validate max number on game
+- better message when all numbers called
+
+
+- honour public/private game flag
+
+- better ui - bigger current number, especially on iPad
+
+- put last number in a ball
+
+
+
 - allow to create/upload new sound files from website... how to check the sounds are good/valid...
 
+- support for oauth/openid
 
-
-
-
-PENDING DEVISE config
-
-Some setup you must do manually if you haven't yet:
-
-  1. Setup default url options for your specific environment. Here is an
-     example of development environment:
-
-       config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-
-     This is a required Rails configuration. In production it must be the
-     actual host of your application
-
-  2. Ensure you have defined root_url to *something* in your config/routes.rb.
-     For example:
-
-       root :to => "home#index"
-
-  3. Ensure you have flash messages in app/views/layouts/application.html.erb.
-     For example:
-
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
