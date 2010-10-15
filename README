@@ -9,6 +9,8 @@ To Do
 
 - audio files for 13-90
 
+- mp3s dont seem to be working in firefox...
+
 - js to auto advance, pause option
 
 - support for multiple callers, choosing which to use and random from all
@@ -25,7 +27,7 @@ is involved, can keep track of things... also number of cards played per game
 - better message when all numbers called
 
 
-- honour public/private game flag
+- honour public/private game flag, only show your games and public games
 
 - better ui - bigger current number, especially on iPad
 
