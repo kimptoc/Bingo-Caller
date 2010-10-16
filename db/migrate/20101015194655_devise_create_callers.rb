@@ -5,6 +5,7 @@ class DeviseCreateCallers < ActiveRecord::Migration
       t.recoverable
       t.rememberable
       t.trackable
+      t.lockable
 
       # t.confirmable
       # t.lockable :lock_strategy => :failed_attempts, :unlock_strategy => :both
@@ -18,6 +19,8 @@ class DeviseCreateCallers < ActiveRecord::Migration
     add_index :callers, :reset_password_token, :unique => true
     # add_index :callers, :confirmation_token,   :unique => true
     # add_index :callers, :unlock_token,         :unique => true
+
+    Caller.new(:email => "chris@kimptoc.net", :password => "123456").save!
   end
 
   def self.down

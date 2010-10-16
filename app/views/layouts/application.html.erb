@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BingoCaller</title>
+  <title>Bingo Caller</title>
   <%= stylesheet_link_tag :all %>
+  <%= stylesheet_link_tag 'application' %>
   <%= stylesheet_link_tag 'le-frog/jquery-ui-1.8.5.custom' %>
 
 <%= stylesheet_link_tag 'fluid960gs/reset' %>
@@ -19,7 +20,7 @@
 
 <script type="text/javascript">
 	$(function() {
-		$( "a" ).button();
+		$( "a, button" ).button();
 
     });
 
@@ -29,7 +30,7 @@
 </head>
 <body>
 
-<h4><a href="/">BINGO CALLER</a></h4>               
+<a href="/"><span class="ui-icon ui-icon-home"></span></a>
 
 <!-- layouts/application.html.erb -->
 <div id="user_nav" style="float:right">

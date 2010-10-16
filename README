@@ -7,18 +7,14 @@ Test site on Heroku is here http://bingo-caller.heroku.com/games
 
 To Do
 
-- mp3s dont seem to be working in firefox...
-
-- js to auto advance, pause option
-
-- support for multiple callers, choosing which to use and random from all
+- show games for session
 
 - only allow creater of game to advance to next ball
 
 - keep a track of players/winners (first line/full house), perhaps have concept of session/evening, so if a little money
 is involved, can keep track of things... also number of cards played per game
 
-
+- button to start same kind of game again (eg after house/bingo called)
 
 
 - validate max number on game
@@ -37,3 +33,4 @@ is involved, can keep track of things... also number of cards played per game
 
 - support for oauth/openid
 
+- mp3s dont seem to be working in firefox... (firefox/mp3 compat issue)

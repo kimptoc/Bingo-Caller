@@ -1,6 +1,8 @@
 BingoCaller::Application.routes.draw do
 
-  root :to => "games#index"
+  resources :bingo_sessions
+
+  root :to => "bingo_sessions#index"
 
   devise_for :callers
 
@@ -9,6 +11,8 @@ BingoCaller::Application.routes.draw do
   resources :games
 
   match 'games/:id/next_ball' => 'games#next_ball'
+  match 'games/:id/enable_auto' => 'games#enable_auto'
+  match 'games/:id/disable_auto' => 'games#disable_auto'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

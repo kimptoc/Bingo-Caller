@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Cost per card:</b>
+  <%= @bingo_session.cost_per_card %>
+</p>
+
+<p>
+  <b>Line prize (%):</b>
+  <%= @bingo_session.line_prize_percent %>
+</p>
+
+<p>
+  <b>House prize (%):</b>
+  <%= @bingo_session.house_prize_percent %>
+</p>
+
+<p>
+  <b>Session name:</b>
+  <%= @bingo_session.session_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_bingo_session_path(@bingo_session) %> |
+<%= link_to 'Back', bingo_sessions_path %>

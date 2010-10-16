@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  cost_per_card: 9.99
+  line_prize: 9.99
+  house_prize: 9.99
+  session_name: MyString
+
+two:
+  cost_per_card: 9.99
+  line_prize: 9.99
+  house_prize: 9.99
+  session_name: MyString

@@ -8,6 +8,18 @@ class GamesController < ApplicationController
     @game.next_ball
 
     redirect_to @game
+   end
+
+  def enable_auto
+    @game = Game.find(params[:id])
+    caller_session['auto'] = true
+    redirect_to @game
+  end
+
+  def disable_auto
+    @game = Game.find(params[:id])
+    caller_session['auto'] = false
+    redirect_to @game
   end
 
   # GET /games
@@ -26,8 +38,19 @@ class GamesController < ApplicationController
   def show
     @game = Game.find(params[:id])
 
-    @caller_sound = "/callers/chris1/#{@game.last_ball_called}.mp3"
-#    @caller_sound = "/callers/jav1/#{@game.last_ball_called}.mp3"
+    auto = caller_session['auto']
+    if auto == nil
+      auto = false
+    end
+    caller_session['auto'] = auto
+    
+    #hack, should scan dirs for options and choose from them
+    #and/or give user choice of which caller to use...
+    if rand(10) % 2 == 0
+      @caller_sound = "/callers/chris1/#{@game.last_ball_called}.mp3"
+    else
+      @caller_sound = "/callers/jav1/#{@game.last_ball_called}.mp3"
+    end
 
     respond_to do |format|
       format.html # show.html.erb

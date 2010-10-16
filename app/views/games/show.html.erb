@@ -10,8 +10,14 @@
             pElement.load();
             pElement.play();
 
+        <% if caller_session['auto'] %>
+        timer=setTimeout('next_ball()',1000*<%= @game.secs_between_calls %>);
+        <% end %>
     });
 
+function next_ball() {
+window.location = '<%= url_for :action => :next_ball %>'
+}
 	</script>
 
 
@@ -21,20 +27,28 @@
   <div class="grid_10" id="accordionTL">
 	<h3><a href="#">Current Ball</a></h3>
     <div>
-    <div style="font-size:160pt;text-align:center;width:100%">
+    <div style="font-size:200pt;text-align:center;width:100%">
   <%= @game.last_ball_called %><br>
       </div>
 </div>
 </div>
 
-  <div class="grid_5">
-  <span style="font-size:30px;width:100%; text-align:right">
-<%= link_to 'Next Ball',:action => :next_ball %>
+  <div class="grid_6">
+  <span class="game_controls">
+<%= link_to 'Next',:action => :next_ball %>
    </span>
+    <% if caller_session['auto'] == true %>
+        <span class="game_controls"><button disabled="true">Auto</button></span>
+    <% else %>
+        <span class="game_controls"> <%= link_to 'Auto',:action => :enable_auto %> </span>
+    <% end %>
+    <% if caller_session['auto'] == false %>
+        <span class="game_controls"><button disabled="true">Pause</button></span>
+    <% else %>
+        <span class="game_controls"><%= link_to 'Pause',:action => :disable_auto %></span>
+    <% end %>
 </div>
   
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
   <p>&nbsp;</p>
 
   <div class="grid_5" id="accordionTR">
@@ -59,25 +73,30 @@
   
 </div>
 
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
 <div class="container_12">
 <div class="grid_12" id="tabBottom">
   <ul><li><a href="#tabBottom-1">All Balls</a></li></ul>
-  <div class="grid_12" id="tabBottom-1">
+  <div class="grid_12" id="tabBottom-1" style="font-size:20pt">
+  <div class="grid_1">&nbsp;</div>
   <div class="grid_1">
     <% (1..@game.max_balls).each { | ball | %>
-        <% if ball%10 == 0 %>
-            </div>
-            <div class="grid_1">
-        <% end %>
         <%
            ball_style="color:plum;"
         if @game.has_been_called? ball
             ball_style = "font-weight:bold;color:yellow;"
         end
         %>
-      <span style="<%= ball_style %>; font-size:larger">
+      <span style="<%= ball_style %>">
         <%= ball %><br>
       </span>
+        <% if ball%10 == 0 %>
+            </div>
+            <div class="grid_1">
+        <% end %>
     <% } %>
   </div>
   </div>
