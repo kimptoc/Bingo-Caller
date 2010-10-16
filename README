@@ -16,6 +16,7 @@ is involved, can keep track of things... also number of cards played per game
 
 - button to start same kind of game again (eg after house/bingo called)
 
+- ensure auto/page reload only happens after number is called/audio
 
 - validate max number on game
 - better message when all numbers called
