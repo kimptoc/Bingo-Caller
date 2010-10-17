@@ -7,6 +7,7 @@ Test site on Heroku is here http://bingo-caller.heroku.com/games
 Bugs
 
 - error when not in a session, check it better
+- flash notice/error not appearing correctly
 
 To Do
 
@@ -38,3 +39,14 @@ To Do
 - support for oauth/openid
 
 - mp3s dont seem to be working in firefox... (firefox/mp3 compat issue)
+
+
+
+SITEMAP
+
+- landing page
+-- if logged in, shows your sessions and public ones
+-- option to start new game (in a new session) or new game in existing session
+
+-- if not logged in, shows public sessions, can view the games in the sessions
+-- options to sign in/up

@@ -1,4 +1,7 @@
 class PlayersController < ApplicationController
+
+  before_filter :authenticate_caller!
+
   # GET /called_numbers/1
   # GET /called_numbers/1.xml
   def show
