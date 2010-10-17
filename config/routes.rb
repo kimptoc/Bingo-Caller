@@ -16,6 +16,9 @@ BingoCaller::Application.routes.draw do
   match 'games/:id/next_ball' => 'games#next_ball'
   match 'games/:id/enable_auto' => 'games#enable_auto'
   match 'games/:id/disable_auto' => 'games#disable_auto'
+  match 'games/:id/record_winner_line' => 'games#record_winner_line'
+  match 'games/:id/record_winner_house' => 'games#record_winner_house'
+  match 'games/:id/same_again' => 'games#same_again'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

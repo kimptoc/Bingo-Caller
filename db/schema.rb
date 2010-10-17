@@ -56,7 +56,6 @@ ActiveRecord::Schema.define(:version => 20101015210558) do
 
   create_table "games", :force => true do |t|
     t.integer  "max_balls",              :default => 90
-    t.integer  "caller_id"
     t.integer  "bingo_session_id"
     t.integer  "player_with_first_line"
     t.integer  "player_with_house"

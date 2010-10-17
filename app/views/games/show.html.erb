@@ -1,5 +1,7 @@
 
 <script type="text/javascript">
+  var cancel_auto = false;
+
 	$(function() {
 		$("#tabBottom").tabs();
 		$("#tabBottom").tabs("select",0);
@@ -19,9 +21,53 @@
         <% end %>
     });
 
-function next_ball() {
-window.location = '<%= url_for :action => :next_ball %>'
-}
+    function next_ball() {
+        if (cancel_auto) return;
+    window.location = '<%= url_for :action => :next_ball %>'
+    }
+
+    function handleWinnerLine()
+    {
+        cancel_auto = true;
+        $( "#dialog-winner-line" ).dialog({
+        resizable: false,
+        height:140,
+        modal: true,
+        buttons: {
+            "Save winner": function() {
+                $( this ).dialog( "close" );
+                document.form_winner_line.submit();
+            },
+            Cancel: function() {
+                $( this ).dialog( "close" );
+            <% if caller_session['auto'] %>
+                window.location = '<%= url_for :action => :next_ball %>'
+            <% end %>
+            }
+        }
+    });
+    }
+    function handleWinnerHouse()
+    {
+        cancel_auto = true;
+        $( "#dialog-winner-house" ).dialog({
+        resizable: false,
+        height:140,
+        modal: true,
+        buttons: {
+            "Save winner": function() {
+                $( this ).dialog( "close" );
+                document.form_winner_house.submit();
+            },
+            Cancel: function() {
+                $( this ).dialog( "close" );
+            <% if caller_session['auto'] %>
+                window.location = '<%= url_for :action => :next_ball %>'
+            <% end %>
+            }
+        }
+    });
+    }
 	</script>
 
 
@@ -31,8 +77,22 @@ window.location = '<%= url_for :action => :next_ball %>'
   <div class="grid_10" id="accordionTL">
 	<h3><a href="#">Current Ball</a></h3>
     <div>
-    <div style="font-size:200pt;text-align:center;width:100%">
-  <%= @game.last_ball_called %><br>
+    <div style="text-align:center;width:100%">
+    <div style="font-size:200pt;">
+      <% if @game.last_ball_called %>
+  <%= @game.last_ball_called %>
+      <% else %>
+          &nbsp;
+          <% end %>
+    </div>
+      <br>
+      <% if @game.player_with_first_line == nil %>
+          <span class="game_controls"><button onclick="handleWinnerLine();">Line?</button></span>
+      <% elsif @game.player_with_house == nil %>
+          <span class="game_controls"><button onclick="handleWinnerHouse();">House?</button></span>
+      <% else %>
+          <span class="game_controls"><%= link_to 'Another?',:action => :same_again %></span>
+      <% end %>
       </div>
 </div>
 </div>
@@ -86,6 +146,7 @@ window.location = '<%= url_for :action => :next_ball %>'
   <ul>
     <li><a href="#tab-balls">All Balls</a></li>
     <li><a href="#tab-players">Players</a></li>
+    <li><a href="#tab-session">Session</a></li>
   </ul>
   <div class="grid_12" id="tab-balls" style="font-size:20pt">
   <div class="grid_1">&nbsp;</div>
@@ -107,11 +168,24 @@ window.location = '<%= url_for :action => :next_ball %>'
     <% } %>
   </div>
   </div>
+  <div class="grid_12" id="tab-session" >
+    <% if @game.bingo_session %>
+    In Bingo Session: <%= @game.bingo_session.id %>, created at <%= @game.bingo_session.created_at %>
+
+    <p>
+      Games played: <%= @game.bingo_session.games.count %>
+    </p>
+    <% end %>
+
+  </div>
   <div class="grid_12" id="tab-players" >
     <div class="grid_7">
     <ul>
     <% @game.bingo_session.players.each do | p | %>
-    <li><%= p.name %>, playing <%= p.cards_played %> card(s)</li>
+    <li><%= p.name %>, playing <%= p.cards_played %> card(s)
+      <% if @game.player_with_first_line and @game.player_with_first_line == p.id %>**LINE**<% end %>
+      <% if @game.player_with_house and @game.player_with_house == p.id %>**HOUSE**<% end %>
+    </li>
     <% end %>
         </ul>
     </div>
@@ -145,10 +219,6 @@ window.location = '<%= url_for :action => :next_ball %>'
   <b>Max balls:</b>
   <%= @game.max_balls %>
 
-<% if @game.bingo_session %>
-In Bingo Session: <%= @game.bingo_session.id %>, created at <%= @game.bingo_session.created_at %>
-<% end %>
-
 </p>
 
 
@@ -156,4 +226,32 @@ In Bingo Session: <%= @game.bingo_session.id %>, created at <%= @game.bingo_sess
 <%= link_to 'Back', games_path %>
 
 </div>
+</div>
+
+<div id="dialog-winner-line" style="display:none">
+  <%= form_for(@game, :url => { :action => "record_winner_line" }, :html => {:name => "form_winner_line" }) do |f| %>
+      <div class="field">
+        <%= f.hidden_field :id %>
+      </div>
+      <div class="field">
+        <%= f.label :player_with_first_line %><br />
+        <%= f.select :player_with_first_line, 
+                     options_from_collection_for_select(@game.bingo_session.players, :id, :name) %>
+      </div>
+  <% end %>
+
+</div>
+
+<div id="dialog-winner-house" style="display:none">
+  <%= form_for(@game, :url => { :action => "record_winner_house" }, :html => {:name => "form_winner_house" }) do |f| %>
+      <div class="field">
+        <%= f.hidden_field :id %>
+      </div>
+      <div class="field">
+        <%= f.label :player_with_house %><br />
+        <%= f.select :player_with_house,
+                     options_from_collection_for_select(@game.bingo_session.players, :id, :name) %>
+      </div>
+  <% end %>
+
 </div>

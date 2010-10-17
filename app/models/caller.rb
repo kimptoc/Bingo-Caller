@@ -1,5 +1,4 @@
 class Caller < ActiveRecord::Base
-  has_many :games
   has_many :players
   has_many :bingo_sessions
 

@@ -10,6 +10,38 @@ class GamesController < ApplicationController
     redirect_to @game
    end
 
+  def record_winner_line
+    @game = Game.find(params[:id])
+    player = @game.bingo_session.players.find(params[:game]["player_with_first_line"])
+
+    @game.player_with_first_line = player.id
+
+    @game.save!
+    
+    redirect_to @game
+  end
+
+  def record_winner_house
+    @game = Game.find(params[:id])
+    player = @game.bingo_session.players.find(params[:game]["player_with_house"])
+
+    @game.player_with_house = player.id
+
+    @game.save!
+
+    redirect_to @game
+  end
+
+  def same_again
+    @game = Game.find(params[:id])
+    @new_game = Game.new
+    @new_game.max_balls = @game.max_balls
+    @new_game.bingo_session = @game.bingo_session
+    @new_game.save
+
+    redirect_to @new_game
+  end
+
   def enable_auto
     @game = Game.find(params[:id])
     caller_session['auto'] = true
@@ -64,7 +96,6 @@ class GamesController < ApplicationController
   # GET /games/new.xml
   def new
     @game = Game.new
-    @game.caller = current_caller
 
     bs_id = params['bingo_session_id']
     if bs_id
