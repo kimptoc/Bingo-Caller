@@ -44,3 +44,7 @@ git remote add heroku git@heroku.com:bingo-caller.git
 >> unmap remote link to heroku
 
 git remote rm heroku
+
+>> server logs
+
+heroku logs

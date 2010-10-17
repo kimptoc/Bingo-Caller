@@ -6,6 +6,7 @@ Test site on Heroku is here http://bingo-caller.heroku.com/games
 
 Bugs
 
+- error when not in a session, check it better
 
 To Do
 
