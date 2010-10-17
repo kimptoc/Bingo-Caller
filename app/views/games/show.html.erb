@@ -109,6 +109,11 @@ window.location = '<%= url_for :action => :next_ball %>'
 <p>
   <b>Max balls:</b>
   <%= @game.max_balls %>
+
+<% if @game.bingo_session %>
+In Bingo Session: <%= @game.bingo_session.id %>, created at <%= @game.bingo_session.created_at %>
+<% end %>
+
 </p>
 
 

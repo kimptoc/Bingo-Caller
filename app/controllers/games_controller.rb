@@ -63,6 +63,11 @@ class GamesController < ApplicationController
   def new
     @game = Game.new
 
+    bs_id = params['bingo_session_id']
+    if bs_id
+      @bingo_session = BingoSession.find(bs_id)
+    end
+
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @game }

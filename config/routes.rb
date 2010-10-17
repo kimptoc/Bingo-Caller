@@ -1,6 +1,8 @@
 BingoCaller::Application.routes.draw do
 
-  resources :bingo_sessions
+  resources :bingo_sessions do
+    resources :games
+  end
 
   root :to => "bingo_sessions#index"
 
