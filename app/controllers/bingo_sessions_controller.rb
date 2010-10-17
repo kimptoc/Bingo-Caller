@@ -28,6 +28,7 @@ class BingoSessionsController < ApplicationController
   # GET /bingo_sessions/new.xml
   def new
     @bingo_session = BingoSession.new
+    @bingo_session.caller = current_caller
 
     respond_to do |format|
       format.html # new.html.erb

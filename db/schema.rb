@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20101015210558) do
     t.decimal  "house_prize_percent", :default => 0.7
     t.string   "session_name"
     t.boolean  "is_public",           :default => false
+    t.integer  "caller_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -68,7 +69,7 @@ ActiveRecord::Schema.define(:version => 20101015210558) do
     t.integer  "bingo_session_id"
     t.string   "name"
     t.integer  "caller_id"
-    t.integer  "cards_played"
+    t.integer  "cards_played",     :default => 3
     t.datetime "created_at"
     t.datetime "updated_at"
   end

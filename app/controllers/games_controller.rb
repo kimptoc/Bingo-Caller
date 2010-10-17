@@ -64,6 +64,7 @@ class GamesController < ApplicationController
   # GET /games/new.xml
   def new
     @game = Game.new
+    @game.caller = current_caller
 
     bs_id = params['bingo_session_id']
     if bs_id
@@ -85,6 +86,12 @@ class GamesController < ApplicationController
   # POST /games.xml
   def create
     @game = Game.new(params[:game])
+
+    if @game.bingo_session == nil
+      @game.bingo_session = BingoSession.new
+      @game.bingo_session.caller = current_caller
+      @game.bingo_session.save!
+    end
 
     respond_to do |format|
       if @game.save

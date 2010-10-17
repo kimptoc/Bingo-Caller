@@ -6,6 +6,7 @@ class CreateBingoSessions < ActiveRecord::Migration
       t.decimal :house_prize_percent , :default => 0.7
       t.string :session_name
       t.boolean :is_public, :default => false
+      t.integer :caller_id
 
       t.timestamps
     end
