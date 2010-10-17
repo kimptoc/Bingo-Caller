@@ -33,14 +33,11 @@ class GamesController < ApplicationController
   end
 
   def same_again
-    @game = Game.find(params[:id])
-    @new_game = Game.new
-    @new_game.max_balls = @game.max_balls
-    @new_game.bingo_session = @game.bingo_session
-    @new_game.game_number = @game.game_number + 1
-    @new_game.save
+    game = Game.find(params[:id])
 
-    redirect_to @new_game
+    new_game = Game.copy_game game
+
+    redirect_to new_game
   end
 
   def enable_auto
@@ -72,6 +69,8 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
     @player = Player.new
     @player.bingo_session = @game.bingo_session
+    @player_game = PlayerGame.new
+    @player_game.game = @game
 
     auto = caller_session['auto']
     if auto == nil

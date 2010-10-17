@@ -14,8 +14,8 @@
 <% @bingo_sessions.each do |bingo_session| %>
   <tr>
     <td><%= bingo_session.cost_per_card %></td>
-    <td><%= bingo_session.line_prize_percent %></td>
-    <td><%= bingo_session.house_prize_percent %></td>
+    <td><%= bingo_session.line_prize_per_card %></td>
+    <td><%= bingo_session.bingo_prize_per_card %></td>
     <td><%= bingo_session.session_name %></td>
     <td><%= link_to 'Show', bingo_session %></td>
     <td><%= link_to 'Edit', edit_bingo_session_path(bingo_session) %></td>
@@ -26,5 +26,6 @@
 
 <br />
 
+<%= link_to 'New Game', new_game_path %>
 <%= link_to 'New Bingo session', new_bingo_session_path %>
 <%= link_to 'Games', games_path %>

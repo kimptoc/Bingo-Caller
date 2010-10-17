@@ -176,7 +176,7 @@
       Games played: <%= @game.bingo_session.games.count %>
     </p>
     <table>
-      <tr><th>Game</th><th>Winner: Line</th><th>Winner: Bingo</th></tr>
+      <tr><th>Game</th><th>Winner: Line</th><th>Winner: Bingo</th><th>Players</th></tr>
       <% @game.bingo_session.games.each do |g| %>
         <tr><td><%= g.game_number %></td>
           <td><%= if g.player_with_first_line
@@ -185,7 +185,20 @@
           <td><%= if g.player_with_bingo
               g.player_with_bingo.name
           end %></td>
+          <td>
+            <%= g.player_games.count %>
+          </td>
         </tr>
+      <% end %>
+    </table>
+
+    <table>
+      <tr><th>Player</th><th>Costs</th><th>Winnings</th></tr>
+      <% @game.bingo_session.players.each do |p| %>
+      <tr><td><%= p.name %></td>
+        <td><%= p.costs %></td>
+        <td><%= p.winnings %></td>
+      </tr>
       <% end %>
     </table>
     <% end %>
@@ -194,23 +207,26 @@
   <div class="grid_12" id="tab-players" >
     <div class="grid_7">
     <ul>
-    <% @game.bingo_session.players.each do | p | %>
-    <li><%= p.name %>, playing <%= p.cards_played %> card(s)
-      <% if @game.player_with_first_line and @game.player_with_first_line == p.id %>**LINE**<% end %>
-      <% if @game.player_with_bingo and @game.player_with_bingo == p.id %>**HOUSE**<% end %>
+    <% @game.player_games.each do | p | %>
+    <li><%= p.player.name %>, playing <%= p.cards_played %> card(s)
+      <% if @game.player_with_first_line and @game.player_with_first_line == p.player %>**LINE**<% end %>
+      <% if @game.player_with_bingo and @game.player_with_bingo == p.player %>**HOUSE**<% end %>
     </li>
     <% end %>
         </ul>
     </div>
     <div class="grid_5">
     Add Player:<br>
-    <%= form_for(@player) do |f| %>
+    <%= form_for(@player_game) do |f| %>
         <div class="field">
-          <%= f.hidden_field :bingo_session_id %>
+          <%= f.hidden_field :game_id, :value => @game.id %>
         </div>
         <div class="field">
-          <%= f.label :name %><br />
-          <%= f.text_field :name %>
+          <%= f.label :player_id %><br />
+          <%= f.select :player_id,
+                       options_from_collection_for_select(@game.bingo_session.players, :id, :name) %><br>
+          <label for="player_other">New Player</label><br>
+          <input type="text" name="player_other">
         </div>
         <div class="field">
           <%= f.label :cards_played %><br />
@@ -249,7 +265,7 @@
       <div class="field">
         <%= f.label :player_with_first_line %><br />
         <%= f.select :player_with_first_line, 
-                     options_from_collection_for_select(@game.bingo_session.players, :id, :name) %>
+                     options_from_collection_for_select(@game.player_games, :player_id, :player) %>
       </div>
   <% end %>
 
@@ -263,7 +279,7 @@
       <div class="field">
         <%= f.label :player_with_bingo %><br />
         <%= f.select :player_with_bingo,
-                     options_from_collection_for_select(@game.bingo_session.players, :id, :name) %>
+                     options_from_collection_for_select(@game.player_games, :player_id, :player) %>
       </div>
   <% end %>
 

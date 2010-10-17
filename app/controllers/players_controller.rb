@@ -1,15 +1,4 @@
 class PlayersController < ApplicationController
-  # GET /called_numbers
-  # GET /called_numbers.xml
-  def index
-    @players = Player.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @players }
-    end
-  end
-
   # GET /called_numbers/1
   # GET /called_numbers/1.xml
   def show

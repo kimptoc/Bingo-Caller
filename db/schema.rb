@@ -10,14 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101015210558) do
+ActiveRecord::Schema.define(:version => 20101017161829) do
 
   create_table "bingo_sessions", :force => true do |t|
-    t.decimal  "cost_per_card",       :default => 0.1
-    t.decimal  "line_prize_percent",  :default => 0.3
-    t.decimal  "house_prize_percent", :default => 0.7
+    t.decimal  "cost_per_card",        :default => 0.1
+    t.decimal  "line_prize_per_card",  :default => 0.03
+    t.decimal  "bingo_prize_per_card", :default => 0.07
     t.string   "session_name"
-    t.boolean  "is_public",           :default => false
+    t.boolean  "is_public",            :default => false
     t.integer  "caller_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -65,11 +65,20 @@ ActiveRecord::Schema.define(:version => 20101015210558) do
     t.datetime "updated_at"
   end
 
+  create_table "player_games", :force => true do |t|
+    t.integer  "player_id"
+    t.integer  "game_id"
+    t.integer  "cards_played", :default => 3
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "player_games", ["player_id", "game_id"], :name => "index_player_games_on_player_id_and_game_id", :unique => true
+
   create_table "players", :force => true do |t|
     t.integer  "bingo_session_id"
     t.string   "name"
     t.integer  "caller_id"
-    t.integer  "cards_played",     :default => 3
     t.datetime "created_at"
     t.datetime "updated_at"
   end

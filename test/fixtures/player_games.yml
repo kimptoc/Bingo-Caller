@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  player_id: 1
+  game_id: 1
+  cards_played: 1
+
+two:
+  player_id: 1
+  game_id: 1
+  cards_played: 1

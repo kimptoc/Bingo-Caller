@@ -1,5 +1,7 @@
 BingoCaller::Application.routes.draw do
 
+  resources :player_games
+
   resources :bingo_sessions do
     resources :games
   end
