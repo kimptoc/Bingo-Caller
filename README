@@ -6,20 +6,20 @@ Test site on Heroku is here http://bingo-caller.heroku.com/games
 
 Bugs
 
-- list of players for house/bingo shows all players
-- same_again not copying players across.
 
 To Do
+
 
 - in general, user can see if session is public or their own
 - can edit/nextball only if its theirs
 - only allow creater of game to advance to next ball
+- honour public/private game flag, only show your games and public games
 
 
-- keep a track of players/winners (first line/full house), perhaps have concept of session/evening, so if a little money
-is involved, can keep track of things... also number of cards played per game
+- players tracked by session, perhaps track by caller.
 
-- button to start same kind of game again (eg after house/bingo called)
+- players ability to delete/edit cards_played, which players in a game
+
 
 
 - ensure auto/page reload only happens after number is called/audio
@@ -27,10 +27,6 @@ is involved, can keep track of things... also number of cards played per game
 - validate max number on game
 - better message when all numbers called
 
-
-- honour public/private game flag, only show your games and public games
-
-- better ui - bigger current number, especially on iPad
 
 - put last number in a ball
 
