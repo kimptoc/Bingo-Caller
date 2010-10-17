@@ -37,6 +37,8 @@ class GamesController < ApplicationController
   # GET /games/1.xml
   def show
     @game = Game.find(params[:id])
+    @player = Player.new
+    @player.bingo_session = @game.bingo_session
 
     auto = caller_session['auto']
     if auto == nil
@@ -53,7 +55,7 @@ class GamesController < ApplicationController
     end
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html { render :html => @game, :stab => params['stab'] } # show.html.erb
       format.xml  { render :xml => @game }
     end
   end

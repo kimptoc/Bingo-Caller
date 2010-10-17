@@ -11,6 +11,7 @@ BingoCaller::Application.routes.draw do
   resources :called_numbers
 
   resources :games
+  resources :players
 
   match 'games/:id/next_ball' => 'games#next_ball'
   match 'games/:id/enable_auto' => 'games#enable_auto'

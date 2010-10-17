@@ -1,6 +1,5 @@
 class Game < ActiveRecord::Base
   has_many :called_numbers
-  has_many :players
   belongs_to :caller
   belongs_to :bingo_session
 

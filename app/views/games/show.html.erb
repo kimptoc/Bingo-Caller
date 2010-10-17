@@ -2,6 +2,10 @@
 <script type="text/javascript">
 	$(function() {
 		$("#tabBottom").tabs();
+		$("#tabBottom").tabs("select",0);
+        <% if params['stab'] %>
+        $("#tabBottom").tabs("select",<%= params['stab'] %>);
+        <% end %>
 		$( "#accordionTL" ).accordion();
 		$( "#accordionTR" ).accordion();
 
@@ -79,8 +83,11 @@ window.location = '<%= url_for :action => :next_ball %>'
 
 <div class="container_12">
 <div class="grid_12" id="tabBottom">
-  <ul><li><a href="#tabBottom-1">All Balls</a></li></ul>
-  <div class="grid_12" id="tabBottom-1" style="font-size:20pt">
+  <ul>
+    <li><a href="#tab-balls">All Balls</a></li>
+    <li><a href="#tab-players">Players</a></li>
+  </ul>
+  <div class="grid_12" id="tab-balls" style="font-size:20pt">
   <div class="grid_1">&nbsp;</div>
   <div class="grid_1">
     <% (1..@game.max_balls).each { | ball | %>
@@ -100,6 +107,34 @@ window.location = '<%= url_for :action => :next_ball %>'
     <% } %>
   </div>
   </div>
+  <div class="grid_12" id="tab-players" >
+    <div class="grid_7">
+    <ul>
+    <% @game.bingo_session.players.each do | p | %>
+    <li><%= p.name %>, playing <%= p.cards_played %> card(s)</li>
+    <% end %>
+        </ul>
+    </div>
+    <div class="grid_5">
+    Add Player:<br>
+    <%= form_for(@player) do |f| %>
+        <div class="field">
+          <%= f.hidden_field :bingo_session_id %>
+        </div>
+        <div class="field">
+          <%= f.label :name %><br />
+          <%= f.text_field :name %>
+        </div>
+        <div class="field">
+          <%= f.label :cards_played %><br />
+          <%= f.text_field :cards_played %>
+        </div>
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+    <% end %>
+      </div>
+</div>
 </div>
 
 <div class="clear"> </div>

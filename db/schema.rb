@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(:version => 20101015210558) do
   end
 
   create_table "players", :force => true do |t|
-    t.integer  "game_id"
+    t.integer  "bingo_session_id"
     t.string   "name"
     t.integer  "caller_id"
     t.integer  "cards_played"
