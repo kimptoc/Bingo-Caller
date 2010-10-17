@@ -14,6 +14,7 @@
 <% if @bingo_session %>
 In Bingo Session: <%= @bingo_session.id %>, created at <%= @bingo_session.created_at %>
 <%= f.hidden_field :bingo_session_id, :value => @bingo_session.id %>
+<%= f.hidden_field :game_number %>
 <br>&nbsp;
 <% end %>
   <div class="field">

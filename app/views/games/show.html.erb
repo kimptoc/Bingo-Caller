@@ -88,7 +88,7 @@
       <br>
       <% if @game.player_with_first_line == nil %>
           <span class="game_controls"><button onclick="handleWinnerLine();">Line?</button></span>
-      <% elsif @game.player_with_house == nil %>
+      <% elsif @game.player_with_bingo == nil %>
           <span class="game_controls"><button onclick="handleWinnerHouse();">House?</button></span>
       <% else %>
           <span class="game_controls"><%= link_to 'Another?',:action => :same_again %></span>
@@ -175,6 +175,19 @@
     <p>
       Games played: <%= @game.bingo_session.games.count %>
     </p>
+    <table>
+      <tr><th>Game</th><th>Winner: Line</th><th>Winner: Bingo</th></tr>
+      <% @game.bingo_session.games.each do |g| %>
+        <tr><td><%= g.game_number %></td>
+          <td><%= if g.player_with_first_line
+              g.player_with_first_line.name
+          end %></td>
+          <td><%= if g.player_with_bingo
+              g.player_with_bingo.name
+          end %></td>
+        </tr>
+      <% end %>
+    </table>
     <% end %>
 
   </div>
@@ -184,7 +197,7 @@
     <% @game.bingo_session.players.each do | p | %>
     <li><%= p.name %>, playing <%= p.cards_played %> card(s)
       <% if @game.player_with_first_line and @game.player_with_first_line == p.id %>**LINE**<% end %>
-      <% if @game.player_with_house and @game.player_with_house == p.id %>**HOUSE**<% end %>
+      <% if @game.player_with_bingo and @game.player_with_bingo == p.id %>**HOUSE**<% end %>
     </li>
     <% end %>
         </ul>
@@ -248,8 +261,8 @@
         <%= f.hidden_field :id %>
       </div>
       <div class="field">
-        <%= f.label :player_with_house %><br />
-        <%= f.select :player_with_house,
+        <%= f.label :player_with_bingo %><br />
+        <%= f.select :player_with_bingo,
                      options_from_collection_for_select(@game.bingo_session.players, :id, :name) %>
       </div>
   <% end %>

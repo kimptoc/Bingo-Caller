@@ -246,7 +246,7 @@ ul.section li.current > a.active:hover {
 /* table
 ----------------------------------------------- */
 table {
-	width:100%;
+	/*width:100%;*/
 	border:1px solid #bbb;
 	margin-bottom:10px;
 }
@@ -274,7 +274,7 @@ tbody th,
 tbody td {
 	border-top:1px solid #bbb;
 	border-bottom:1px solid #bbb;
-	background:#eee;
+	/*background:#eee;*/
 }
 tbody tr.odd th,
 tbody tr.odd td {

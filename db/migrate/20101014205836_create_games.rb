@@ -3,9 +3,10 @@ class CreateGames < ActiveRecord::Migration
     create_table :games do |t|
       t.integer :max_balls, :default => 90
       t.integer :bingo_session_id
-      t.integer :player_with_first_line
-      t.integer :player_with_house
+      t.integer :player_with_first_line_id
+      t.integer :player_with_bingo_id
       t.integer :secs_between_calls, :default => 5
+      t.integer :game_number, :default => 1
       
       t.timestamps
     end

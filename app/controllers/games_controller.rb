@@ -14,7 +14,7 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
     player = @game.bingo_session.players.find(params[:game]["player_with_first_line"])
 
-    @game.player_with_first_line = player.id
+    @game.player_with_first_line = player
 
     @game.save!
     
@@ -23,9 +23,9 @@ class GamesController < ApplicationController
 
   def record_winner_house
     @game = Game.find(params[:id])
-    player = @game.bingo_session.players.find(params[:game]["player_with_house"])
+    player = @game.bingo_session.players.find(params[:game]["player_with_bingo"])
 
-    @game.player_with_house = player.id
+    @game.player_with_bingo = player
 
     @game.save!
 
@@ -37,6 +37,7 @@ class GamesController < ApplicationController
     @new_game = Game.new
     @new_game.max_balls = @game.max_balls
     @new_game.bingo_session = @game.bingo_session
+    @new_game.game_number = @game.game_number + 1
     @new_game.save
 
     redirect_to @new_game
@@ -100,7 +101,11 @@ class GamesController < ApplicationController
     bs_id = params['bingo_session_id']
     if bs_id
       @bingo_session = BingoSession.find(bs_id)
+    else
+      @bingo_session = BingoSession.new
+      @bingo_session.save!
     end
+    @game.game_number = @bingo_session.games.count + 1
 
     respond_to do |format|
       format.html # new.html.erb

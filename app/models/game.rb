@@ -1,6 +1,9 @@
 class Game < ActiveRecord::Base
   has_many :called_numbers
   belongs_to :bingo_session
+  belongs_to :player_with_first_line, :class_name => "Player",  :foreign_key => "player_with_first_line_id"
+  belongs_to :player_with_bingo, :class_name => "Player",  :foreign_key => "player_with_bingo_id"
+
 
   def has_been_called? ball
 #    puts "Checking "+ball.to_s
