@@ -256,7 +256,7 @@
 </div>
 
 <div id="dialog-winner-house" style="display:none">
-  <%= form_for(@game, :url => { :action => "record_winner_house" }, :html => {:name => "form_winner_house" }) do |f| %>
+  <%= form_for(@game, :url => { :action => "record_winner_bingo" }, :html => {:name => "form_winner_house" }) do |f| %>
       <div class="field">
         <%= f.hidden_field :id %>
       </div>

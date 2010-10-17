@@ -21,7 +21,7 @@ class GamesController < ApplicationController
     redirect_to @game
   end
 
-  def record_winner_house
+  def record_winner_bingo
     @game = Game.find(params[:id])
     player = @game.bingo_session.players.find(params[:game]["player_with_bingo"])
 
