@@ -30,8 +30,19 @@
 </head>
 <body>
 
+<div class="container_16">
+<div class="grid_1">
 <a href="/"><span class="ui-icon ui-icon-home"></span></a>
+</div>
+<div class="grid_13">
+  <!--<p id="notice">< %= notice %></p>-->
+  <p id="notice" style="display:none;"><%= flash %></p>
 
+
+  <%= yield %>
+
+</div>
+  <div class="grid_2">
 <!-- layouts/application.html.erb -->
 <div id="user_nav" style="float:right">
   <% if caller_signed_in? %>
@@ -42,12 +53,9 @@
     <%= link_to "Sign up", new_caller_registration_path %> or <%= link_to "sign in", new_caller_session_path %>
   <% end %>
 </div>
+  </div>
 
-<!--<p id="notice"><%= notice %></p>-->
-<p id="notice"><%= flash %></p>
-
-
-<%= yield %>
+</div>
 
 <div style="float:right">
     The code for this site is stored on the <a href="http://github.com/kimptoc/Bingo-Caller">GitHubs</a>
