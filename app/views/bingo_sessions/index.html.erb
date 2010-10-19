@@ -1,31 +1,70 @@
-<h1>Listing bingo_sessions</h1>
+Get a little help running your Bingo game - this site will call the numbers, track whats been called, track who is playing - and who is winning!
+<p>&nbsp;<p>
+	
+<% if caller_signed_in? %>
+<h1>My Bingo Sessions</h1>
 
 <table>
-  <tr>
+  <tr><th>Id</th>
     <th>Cost per card</th>
     <th>Line prize (%)</th>
     <th>House prize (%)</th>
     <th>Session name</th>
+    <th>Num Players</th>
+    <th></th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
 
-<% @bingo_sessions.each do |bingo_session| %>
+<% @my_sessions.each do |bingo_session| %>
   <tr>
+    <td><%= bingo_session.id %></td>
     <td><%= bingo_session.cost_per_card %></td>
     <td><%= bingo_session.line_prize_per_card %></td>
     <td><%= bingo_session.bingo_prize_per_card %></td>
     <td><%= bingo_session.session_name %></td>
+    <td><%= bingo_session.players.count %></td>
     <td><%= link_to 'Show', bingo_session %></td>
-    <td><%= link_to 'Edit', edit_bingo_session_path(bingo_session) %></td>
-    <td><%= link_to 'Destroy', bingo_session, :confirm => 'Are you sure?', :method => :delete %></td>
+<td>	<%= link_to 'New Game', new_bingo_session_game_path ( bingo_session) %> </td>
+<td><%= link_to 'Edit', edit_bingo_session_path(bingo_session) %></td>
+<td><%= link_to 'Destroy', bingo_session, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<%= link_to 'New Game', new_game_path %>
+<%= link_to 'New Bingo session', new_bingo_session_path %>
+<% else %>
+<%= link_to "Sign up", new_caller_registration_path %> or <%= link_to "sign in", new_caller_session_path %> to start your game.
+
+<% end %>
+<p>&nbsp;
+<h1>Public Bingo Sessions</h1>
+
+<table>
+  <tr><th>Id</th>
+    <th>Cost per card</th>
+    <th>Line prize (%)</th>
+    <th>House prize (%)</th>
+    <th>Session name</th>
+    <th>Num Players</th>
+    <th>Num Games</th>
+    <th></th>
+  </tr>
+
+<% @bingo_sessions.each do |bingo_session| %>
+  <tr>
+    <td><%= bingo_session.id %></td>
+    <td><%= bingo_session.cost_per_card %></td>
+    <td><%= bingo_session.line_prize_per_card %></td>
+    <td><%= bingo_session.bingo_prize_per_card %></td>
+    <td><%= bingo_session.session_name %></td>
+    <td><%= bingo_session.players.count %></td>
+    <td><%= bingo_session.games.count %></td>
+    <td><%= link_to 'Show', bingo_session %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Game', new_game_path %>
-<%= link_to 'New Bingo session', new_bingo_session_path %>
-<%= link_to 'Games', games_path %>

@@ -5,7 +5,8 @@ class BingoSessionsController < ApplicationController
   # GET /bingo_sessions
   # GET /bingo_sessions.xml
   def index
-    @bingo_sessions = BingoSession.all
+    @bingo_sessions = BingoSession.all(:conditions => ["is_public = ?", true])
+    @my_sessions = current_caller.bingo_sessions unless current_caller.nil?
 
     respond_to do |format|
       format.html # index.html.erb
@@ -28,7 +29,6 @@ class BingoSessionsController < ApplicationController
   # GET /bingo_sessions/new.xml
   def new
     @bingo_session = BingoSession.new
-    @bingo_session.caller = current_caller
 
     respond_to do |format|
       format.html # new.html.erb
@@ -45,6 +45,7 @@ class BingoSessionsController < ApplicationController
   # POST /bingo_sessions.xml
   def create
     @bingo_session = BingoSession.new(params[:bingo_session])
+    @bingo_session.caller = current_caller
 
     respond_to do |format|
       if @bingo_session.save
