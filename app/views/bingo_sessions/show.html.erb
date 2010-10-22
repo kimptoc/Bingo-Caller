@@ -20,6 +20,7 @@
   <%= @bingo_session.session_name %>
 </p>
 
+<%= link_to 'Current Game', :action => :show_current_game, :id => @bingo_session.id %>
 
 <%= link_to 'New Game', new_bingo_session_game_path ( @bingo_session) %> 
 <%= link_to 'Edit', edit_bingo_session_path(@bingo_session) %> 

@@ -11,9 +11,8 @@ Bugs
 
 To Do
 
-
 - in general, user can see if session is public or their own
-- can edit/nextball only if its theirs
+- can use edit/nextball only if its theirs
 - only allow creater of game to advance to next ball
 - honour public/private game flag, only show your games and public games
 
@@ -21,7 +20,6 @@ To Do
 
 - players tracked by session, perhaps track by caller.
 
-- players ability to delete/edit cards_played, which players in a game
 
 
 

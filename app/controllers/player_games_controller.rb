@@ -85,7 +85,7 @@ class PlayerGamesController < ApplicationController
     @player_game.destroy
 
     respond_to do |format|
-      format.html { redirect_to(player_games_url) }
+      format.html { redirect_to(@player_game.game, :notice => 'Player game was successfully removed.') }
       format.xml  { head :ok }
     end
   end

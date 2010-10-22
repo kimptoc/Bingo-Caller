@@ -25,6 +25,17 @@ class BingoSessionsController < ApplicationController
     end
   end
 
+  def show_current_game
+    @bingo_session = BingoSession.find(params[:id])
+
+    respond_to do |format|
+      format.html { redirect_to @bingo_session.games.last unless @bingo_session.games.last.nil?
+        redirect_to @bingo_session if @bingo_session.games.last.nil? }
+      format.xml  { render :xml => @bingo_session }
+    end
+  end
+
+
   # GET /bingo_sessions/new
   # GET /bingo_sessions/new.xml
   def new

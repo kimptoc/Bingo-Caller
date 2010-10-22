@@ -102,6 +102,7 @@ class GamesController < ApplicationController
       @bingo_session = BingoSession.find(bs_id)
     else
       @bingo_session = BingoSession.new
+      @bingo_session.caller = current_caller
       @bingo_session.save!
     end
     @game.game_number = @bingo_session.games.count + 1

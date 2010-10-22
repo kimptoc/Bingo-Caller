@@ -205,14 +205,30 @@
   </div>
   <div class="grid_12" id="tab-players" >
     <div class="grid_7">
-    <ul>
+    <table>
     <% @game.player_games.each do | p | %>
-    <li><%= p.player.name %>, playing <%= p.cards_played %> card(s)
-      <% if @game.player_with_first_line and @game.player_with_first_line == p.player %>**LINE**<% end %>
-      <% if @game.player_with_bingo and @game.player_with_bingo == p.player %>**HOUSE**<% end %>
-    </li>
+    <tr><%= form_for(p) do |f| %>
+    <td><%= p.player.name %></td><td>
+		<%= f.select( :cards_played, options_for_select([[1,1], [2,2], [3,3], [4,4], [5,5], [6,6], [7,7], [8,8], [9,9]], p.cards_played)) %>
+</td>
+<td>      <% if @game.player_with_first_line and @game.player_with_first_line == p.player %>**LINE**<% end %>
+      <% if @game.player_with_bingo and @game.player_with_bingo == p.player %>**HOUSE**<% end %></td>
+<td>
+	<button type="submit" class="positive">
+	<span class="ui-icon ui-icon-disk"></span>
+	</button>
+	</td>
+	<% end %>
+<td>
+    <%= form_for(p, :html => { :method => "delete" }, :confirm => "Are you sure?") do |f| %>
+	<button type="submit" class="positive">
+	<span class="ui-icon ui-icon-trash"></span>
+	</button>
+<% end %>
+	</td>
+</tr>
     <% end %>
-        </ul>
+</table>
     </div>
     <div class="grid_5">
     Add Player:<br>
@@ -229,7 +245,7 @@
         </div>
         <div class="field">
           <%= f.label :cards_played %><br />
-          <%= f.text_field :cards_played %>
+<%= f.select( :cards_played, options_for_select([[1,1], [2,2], [3,3], [4,4], [5,5], [6,6], [7,7], [8,8], [9,9]], 3)) %>
         </div>
         <div class="actions">
           <%= f.submit %>

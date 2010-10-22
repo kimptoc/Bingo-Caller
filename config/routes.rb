@@ -7,7 +7,9 @@ BingoCaller::Application.routes.draw do
   end
 
   root :to => "bingo_sessions#index"
-
+ 
+  match 'bingo_sessions/:id/show_current_game' => 'bingo_sessions#show_current_game'
+ 
   devise_for :callers
 
   resources :called_numbers
