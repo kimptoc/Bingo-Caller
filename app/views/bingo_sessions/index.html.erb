@@ -56,7 +56,7 @@ Get a little help running your Bingo game - this site will call the numbers, tra
 
 <% @bingo_sessions.each do |bingo_session| %>
   <tr>
-    <td><%= bingo_session.id %></td>
+    <td><%= bingo_session.id %> <br> <%= bingo_session.created_at.strftime("%e %b %Y %H:%M") %></td>
     <td><%= bingo_session.cost_per_card %></td>
     <td><%= bingo_session.line_prize_per_card %></td>
     <td><%= bingo_session.bingo_prize_per_card %></td>
@@ -70,3 +70,7 @@ Get a little help running your Bingo game - this site will call the numbers, tra
 
 <br />
 
+Bingo Sessions started: <%= BingoSession.count %> <br>
+Games started: <%= num_games_started = Game.count %>,
+finished: <%= num_games_finished = Game.count(:conditions => "player_with_bingo_id is not null") %>,
+in progress: <%= num_games_started - num_games_finished %>
