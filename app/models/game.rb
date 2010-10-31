@@ -23,7 +23,7 @@ class Game < ActiveRecord::Base
       puts "All numbers have been called..."
       return
     end
-    next_ball_pos = 1+rand(range-1)
+    next_ball_pos = 1+rand(range)
 #    puts "Next ball pos "+next_ball_pos.to_s
     current_pos = 0
     (1..next_ball_pos).each { | p |

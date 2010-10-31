@@ -10,7 +10,17 @@ Bugs
 - flash notice/error not appearing correctly
 
 To Do
-
+- show net winnings
+- joint/multiple winners
+- on new game reset auto
+- stats of number games won lines/bingos
+- track what people put into kitty, eg if no change
+- dont recall number on reload, or use js for some actions
+- option to void line/house
+- no auto when mouse moves
+- amend who won
+- amend prizes per game
+- show winnings per game
 - show date/time of bingo session on various pages, home, show, game
 - in general, user can see if session is public or their own
 - can use edit/nextball only if its theirs
