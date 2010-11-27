@@ -1,0 +1,10 @@
+   production:
+            adapter: mysql2 # <--- Notice we are using the MySQL 2 gem.
+            encoding: utf8
+            reconnect: false
+            database: my_application_staging
+            pool: 5
+            username: gitpusshuten
+            password: gitpusshutens_password
+            host: localhost
+
