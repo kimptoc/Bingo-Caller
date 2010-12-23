@@ -1,13 +1,11 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  game_id: 1
-  name: MyString
+  bingo_session_id: 1
+  name: P1
   caller_id: 1
-  cards_played: 1
 
 two:
-  game_id: 1
-  name: MyString
+  bingo_session_id: 1
+  name: P2
   caller_id: 1
-  cards_played: 1

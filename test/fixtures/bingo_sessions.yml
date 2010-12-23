@@ -2,12 +2,12 @@
 
 one:
   cost_per_card: 9.99
-  line_prize: 9.99
-  house_prize: 9.99
+  line_prize_per_card: 9.99
+  bingo_prize_per_card: 9.99
   session_name: MyString
 
 two:
   cost_per_card: 9.99
-  line_prize: 9.99
-  house_prize: 9.99
+  line_prize_per_card: 9.99
+  bingo_prize_per_card: 9.99
   session_name: MyString

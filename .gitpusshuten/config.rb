@@ -14,8 +14,8 @@
 pusshuten 'My Application', :staging, :production do
 
   configure do |c|
-    c.user       = 'ubuntu'
-    c.ip         = '109.107.35.63'
+    c.user       = 'gitpusshuten'
+    c.ip         = '109.107.36.134'
     # c.password   = 'my-password'
     # c.passphrase = 'my-ssh-passphrase'
     # c.port       = '22'
