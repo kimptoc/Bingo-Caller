@@ -93,4 +93,5 @@ DEPENDENCIES
   rails
   rails_code_qa
   rcov
+  sexp_processor
   sqlite3-ruby

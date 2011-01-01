@@ -7,6 +7,9 @@ gem 'rails'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
 
+#not sure what this does...
+gem "sexp_processor"
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
