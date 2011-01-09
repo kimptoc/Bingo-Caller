@@ -3,6 +3,8 @@ require 'test_helper'
 class BingoSessionsControllerTest < ActionController::TestCase
   setup do
     @bingo_session = bingo_sessions(:one)
+    @caller = callers(:one)
+    sign_in @caller
   end
 
   test "should get index" do

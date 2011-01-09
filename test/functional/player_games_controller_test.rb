@@ -3,6 +3,8 @@ require 'test_helper'
 class PlayerGamesControllerTest < ActionController::TestCase
   setup do
     @player_game = player_games(:one)
+    @caller = callers(:one)
+    sign_in @caller
   end
 
   test "should get index" do
@@ -17,6 +19,7 @@ class PlayerGamesControllerTest < ActionController::TestCase
   end
 
   test "should create player_game" do
+    PlayerGame.delete_all
     assert_difference('PlayerGame.count') do
       post :create, :player_game => @player_game.attributes
     end
@@ -26,7 +29,7 @@ class PlayerGamesControllerTest < ActionController::TestCase
 
   test "should show player_game" do
     get :show, :id => @player_game.to_param
-    assert_response :success
+    assert_response 302
   end
 
   test "should get edit" do

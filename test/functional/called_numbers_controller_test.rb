@@ -3,6 +3,8 @@ require 'test_helper'
 class CalledNumbersControllerTest < ActionController::TestCase
   setup do
     @called_number = called_numbers(:one)
+    @caller = callers(:one)
+    sign_in @caller
   end
 
   test "should get index" do
