@@ -8,7 +8,8 @@ class PlayersController < ApplicationController
     @player = Player.find(params[:id])
 
     #todo - want to select the players tab, but stab param not being passed through
-    redirect_to @player.bingo_session.games.last, :stab => 1
+    redirect_to @player.bingo_session.games.last, :stab => 1 unless @player.bingo_session.games.length == 0
+    redirect_to @player.bingo_session if @player.bingo_session.games.length == 0
   end
 
   # GET /called_numbers/new

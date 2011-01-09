@@ -1,14 +1,11 @@
 require 'test_helper'
 
 class PlayersControllerTest < ActionController::TestCase
+
   setup do
     @player = players(:one)
-  end
-
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:players)
+    @caller = callers(:one)
+    sign_in @caller
   end
 
   test "should get new" do
@@ -17,7 +14,7 @@ class PlayersControllerTest < ActionController::TestCase
   end
 
   test "should create player" do
-    assert_difference('PlayerGame.count') do
+    assert_difference('Player.count') do
       post :create, :player => @player.attributes
     end
 
@@ -26,7 +23,7 @@ class PlayersControllerTest < ActionController::TestCase
 
   test "should show player" do
     get :show, :id => @player.to_param
-    assert_response :success
+    assert_response 302
   end
 
   test "should get edit" do
@@ -40,7 +37,7 @@ class PlayersControllerTest < ActionController::TestCase
   end
 
   test "should destroy player" do
-    assert_difference('PlayerGame.count', -1) do
+    assert_difference('Player.count', -1) do
       delete :destroy, :id => @player.to_param
     end
 
