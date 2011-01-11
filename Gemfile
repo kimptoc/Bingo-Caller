@@ -34,6 +34,8 @@ gem "sexp_processor"
 
 gem 'devise'
 
+gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
+
 gem 'rcov'
 
 gem 'rails_code_qa'
