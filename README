@@ -4,26 +4,29 @@ The aim is for it to run on the iPad, anywhere else is a bonus, for now.
 
 Test site on Heroku is here http://bingo-caller.heroku.com/games
 
+To play a game, its expected that the players will have bingo cards and markers.  This site will then track the balls called, and who has won.
+
 Bugs
 
 - error when not in a session, check it better
 - flash notice/error not appearing correctly
+- added rails admin, which lets logged in users view everything, need to amend it to provide a scoped view, ie only users sessions/games etc.
 
 To Do
-- show net winnings
-- joint/multiple winners
-- on new game reset auto
+- show net winnings (money won less money spent )
+- joint/multiple winners (currently all db/views assume only 1 person can win - this is not true)
+- on new game reset auto (turn off when starting a new game)
 - stats of number games won lines/bingos
-- track what people put into kitty, eg if no change
-- dont recall number on reload, or use js for some actions
-- option to void line/house
-- no auto when mouse moves
-- amend who won
-- amend prizes per game
+- track what people put into kitty, eg if no change - for example Joe only has a fiver, no coins, track his money
+- dont recall number on reload, or use js for some actions (currently when you click some of the buttons, the numbers are re-called - gets confusing).
+- option to void line/house (basically, there is no winner, carry forward prize pool to next game)
+- no auto page reload when mouse is moving (perhaps need 5seconds or so quiet time before starting)
+- ability to amend who won a game/line
+- ability to amend the prizes per game 
 - show winnings per game
 - show date/time of bingo session on various pages, home, show, game
 - in general, user can see if session is public or their own
-- can use edit/nextball only if its theirs
+- can use edit/nextball only if its the current users game
 - only allow creater of game to advance to next ball
 - honour public/private game flag, only show your games and public games
 
