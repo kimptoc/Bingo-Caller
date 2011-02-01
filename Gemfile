@@ -43,3 +43,5 @@ gem 'rails_code_qa'
 group :development do
   gem "ruby-debug"
 end
+
+gem 'errorapp_notifier'

@@ -26,7 +26,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abc17238-13f3-4dd4-9fcc-e3a6c56a83b1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.rakeTasks" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/errorapp_notifier.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/bingo-caller.iml" afterPath="$PROJECT_DIR$/.idea/bingo-caller.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
@@ -97,10 +97,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Gemfile" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="0" selection-start="790" selection-end="790" vertical-scroll-proportion="0.82681566">
+            <state line="21" column="5" selection-start="361" selection-end="361" vertical-scroll-proportion="-9.333333">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="errorapp_notifier.yml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/errorapp_notifier.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="49" selection-start="49" selection-end="49" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -140,7 +149,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/test/fixtures/callers.yml" />
         <option value="$PROJECT_DIR$/test/functional/base_test_controller.rb" />
         <option value="$PROJECT_DIR$/test/test_helper.rb" />
         <option value="$PROJECT_DIR$/app/views/players/new.html.erb" />
@@ -156,6 +164,7 @@
         <option value="$PROJECT_DIR$/app/controllers/player_games_controller.rb" />
         <option value="$PROJECT_DIR$/test/functional/player_games_controller_test.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/config/errorapp_notifier.yml" />
       </list>
     </option>
   </component>
@@ -204,6 +213,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Favorites" />
+      <pane id="RailsProjectView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -246,31 +257,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="functional" />
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="RailsProjectView" />
-      <pane id="Favorites" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="org.jetbrains.plugins.ruby.settings.RubyIdeSdkConfigurable" />
+    <property name="recentsLimit" value="5" />
     <property name="RakeTaksPopup.undocumentedIncluded" value="false" />
-    <property name="GoToClass.includeJavaFiles" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="GoToClass.includeJavaFiles" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -667,14 +672,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="239" y="76" width="1125" height="687" extended-state="0" />
+    <frame x="10" y="30" width="1130" height="734" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33060855" sideWeight="0.0" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33001807" sideWeight="0.0" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39937106" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TeamCity" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3254717" sideWeight="0.9976708" order="2" side_tool="false" content_ui="tabs" />
@@ -739,13 +744,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.8.7-p330@p-bingo-caller/gems/actionpack-3.0.0/lib/action_controller/metal/testing.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="322" selection-end="322" vertical-scroll-proportion="0.2775">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/tasks/rcov.rake">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="0" selection-start="196" selection-end="196" vertical-scroll-proportion="0.0" />
@@ -753,16 +751,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.rvmrc">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="23" selection-end="23" vertical-scroll-proportion="0.03">
-          <folding />
-        </state>
+        <state line="1" column="0" selection-start="23" selection-end="23" vertical-scroll-proportion="0.03" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/functional/players_controller_test.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="120" selection-end="168" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="8" column="0" selection-start="120" selection-end="168" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/functional/bingo_sessions_controller_test.rb">
@@ -774,51 +768,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/unit/player_game_test.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/player_games_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="49" selection-start="2338" selection-end="2338" vertical-scroll-proportion="0.7716263">
-          <folding />
-        </state>
+        <state line="87" column="49" selection-start="2338" selection-end="2338" vertical-scroll-proportion="0.7716263" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/functional/games_controller_test.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="2" selection-start="544" selection-end="544" vertical-scroll-proportion="0.4111675">
-          <folding />
-        </state>
+        <state line="28" column="2" selection-start="544" selection-end="544" vertical-scroll-proportion="0.4111675" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/games/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="210" column="0" selection-start="5748" selection-end="5748" vertical-scroll-proportion="0.021543985">
-          <folding />
-        </state>
+        <state line="210" column="0" selection-start="5748" selection-end="5748" vertical-scroll-proportion="0.021543985" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/fixtures/player_games.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="7" selection-start="146" selection-end="146" vertical-scroll-proportion="0.18274112">
-          <folding />
-        </state>
+        <state line="9" column="7" selection-start="146" selection-end="146" vertical-scroll-proportion="0.18274112" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/fixtures/players.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="7" selection-start="148" selection-end="148" vertical-scroll-proportion="0.1767594">
-          <folding />
-        </state>
+        <state line="9" column="7" selection-start="148" selection-end="148" vertical-scroll-proportion="0.1767594" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/fixtures/games.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="21" selection-start="174" selection-end="174" vertical-scroll-proportion="0.19639935">
-          <folding />
-        </state>
+        <state line="10" column="21" selection-start="174" selection-end="174" vertical-scroll-proportion="0.19639935" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20101014205836_create_games.rb">
@@ -828,21 +808,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/functional/called_numbers_controller_test.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="19" selection-start="186" selection-end="186" vertical-scroll-proportion="0.019639935">
-          <folding />
-        </state>
+        <state line="6" column="19" selection-start="186" selection-end="186" vertical-scroll-proportion="0.019639935" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/functional/player_games_controller_test.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="25" selection-start="475" selection-end="475" vertical-scroll-proportion="0.24343258">
-          <folding />
-        </state>
+        <state line="22" column="25" selection-start="475" selection-end="475" vertical-scroll-proportion="0.24343258" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="0" selection-start="790" selection-end="790" vertical-scroll-proportion="0.82681566">
+        <state line="21" column="5" selection-start="361" selection-end="361" vertical-scroll-proportion="-9.333333">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/errorapp_notifier.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="49" selection-start="49" selection-end="49" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>

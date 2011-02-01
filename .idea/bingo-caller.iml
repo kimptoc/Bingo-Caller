@@ -18,6 +18,12 @@
     </requirement>
     <requirement>
       <requirement>
+        <dependency name="errorapp_notifier" version="0" bound="GREATER_OR_EQUAL" git="false" path="false" doRequire="true" />
+      </requirement>
+      <source from="Gemfile" />
+    </requirement>
+    <requirement>
+      <requirement>
         <dependency name="rails" version="0" bound="GREATER_OR_EQUAL" git="false" path="false" doRequire="true" />
       </requirement>
       <source from="Gemfile" />
@@ -120,6 +126,8 @@
     <orderEntry type="library" scope="PROVIDED" name="[gem] activemodel (v3.0.3, /Users/kimptoc/.rvm/gems/ruby-1.8.7-p330@p-bingo-caller/gems/activemodel-3.0.3)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] warden (v1.0.3, /Users/kimptoc/.rvm/gems/ruby-1.8.7-p330@p-bingo-caller/gems/warden-1.0.3)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] actionmailer (v3.0.3, /Users/kimptoc/.rvm/gems/ruby-1.8.7-p330@p-bingo-caller/gems/actionmailer-3.0.3)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rails_admin (v0.0.1, /Users/kimptoc/.rvm/gems/ruby-1.8.7-p330@p-bingo-caller/bundler/gems/rails_admin-487d0ec845ef)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rails_admin (v0.0.0, /Users/kimptoc/.rvm/gems/ruby-1.8.7-p330@p-bingo-caller/gems/rails_admin-0.0.0)" level="application" />
   </component>
 </module>
 
