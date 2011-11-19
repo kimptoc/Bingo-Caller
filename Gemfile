@@ -1,4 +1,5 @@
-source 'http://rubygems.org'
+#source 'http://rubygems.org'
+source 'http://rubygems.dev'
 
 gem 'rails'
 
@@ -7,8 +8,18 @@ gem 'rails'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
 
+#rails 3.1 asset pipeline
+gem 'sass'
+gem 'coffee-script'
+gem 'uglifier'
+gem 'jquery-rails'
+
+
+gem 'rails-backbone'
+
+
 #not sure what this does...
-gem "sexp_processor"
+#gem "sexp_processor"
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -36,12 +47,12 @@ gem 'devise'
 
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 
-gem 'rcov'
+#gem 'rcov'
 
-gem 'rails_code_qa'
+#gem 'rails_code_qa'
 
 group :development do
-  gem "ruby-debug"
+#  gem "ruby-debug"
 end
 
-gem 'errorapp_notifier'
+#gem 'errorapp_notifier'

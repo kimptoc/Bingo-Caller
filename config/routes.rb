@@ -1,5 +1,7 @@
 BingoCaller::Application.routes.draw do
 
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
   resources :player_games
 
   resources :bingo_sessions do
@@ -7,9 +9,9 @@ BingoCaller::Application.routes.draw do
   end
 
   root :to => "bingo_sessions#index"
- 
+
   match 'bingo_sessions/:id/show_current_game' => 'bingo_sessions#show_current_game'
- 
+
   devise_for :callers
 
   resources :called_numbers
@@ -73,7 +75,7 @@ BingoCaller::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+  # root :to => 'welcome#index'
 
   # See how all your routes lay out with "rake routes"
 

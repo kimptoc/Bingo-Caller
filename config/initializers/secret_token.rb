@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-BingoCaller::Application.config.secret_token = 'f7fb3130ac6a27ac869756c1aa1c6359ba70ab0816df433fffaa4ad49fe90c69270cab532a83df0d2544fa64b55771a6358e68f20367f1ae1a2e9df2a6fc2190'
+BingoCaller::Application.config.secret_token = '539441064ec7861e3111e635e7504b4495b3769cbd6c1a37f5bfd4aaf9477f60b69eb2eee320a9005d27fb1634a28058b4dc973a4abf9c4d87ec11621275249f'

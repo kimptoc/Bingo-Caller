@@ -1,1 +1,2 @@
-rvm ree@p-bingo-caller
+#rvm ree@p-bingo-caller
+rvm 1.9.3@p-bingo-caller

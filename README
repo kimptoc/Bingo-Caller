@@ -13,6 +13,10 @@ Bugs
 - added rails admin, which lets logged in users view everything, need to amend it to provide a scoped view, ie only users sessions/games etc.
 
 To Do
+- add rails_admin
+- upgrade to 3.1.2/1.9.3
+- use backbone/coffeescript
+
 - show net winnings (money won less money spent )
 - joint/multiple winners (currently all db/views assume only 1 person can win - this is not true)
 - on new game reset auto (turn off when starting a new game)
