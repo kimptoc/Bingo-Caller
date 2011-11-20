@@ -1,6 +1,6 @@
 
 <script type="text/javascript">
-  var cancel_auto = false;
+  cancel_auto = false;
 
 	$(function() {
 		$("#tabBottom").tabs();
@@ -17,14 +17,9 @@
             pElement.play();
 
         <% if caller_session['auto'] %>
-        timer=setTimeout('next_ball()',1000*<%= @game.secs_between_calls %>);
+        timer=setTimeout('BingoCaller.next_ball("<%= url_for :action => :next_ball %>")',1000*<%= @game.secs_between_calls %>);
         <% end %>
     });
-
-    function next_ball() {
-        if (cancel_auto) return;
-    window.location = '<%= url_for :action => :next_ball %>'
-    }
 
     function handleWinnerLine()
     {

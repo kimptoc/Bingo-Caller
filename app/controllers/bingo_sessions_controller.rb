@@ -26,6 +26,8 @@ class BingoSessionsController < ApplicationController
   end
 
   def show_current_game
+    Rails.logger.debug "BingoSessions::show_current_game"
+
     @bingo_session = BingoSession.find(params[:id])
 
     respond_to do |format|
