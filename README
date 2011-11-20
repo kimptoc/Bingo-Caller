@@ -7,16 +7,14 @@ Test site on Heroku is here http://bingo-caller.heroku.com/games
 To play a game, its expected that the players will have bingo cards and markers.  This site will then track the balls called, and who has won.
 
 Bugs
-
+- occasional/persistent error about no new/game action
+- disable auto advance when winner line/house dialog open
 - error when not in a session, check it better
 - flash notice/error not appearing correctly
 - added rails admin, which lets logged in users view everything, need to amend it to provide a scoped view, ie only users sessions/games etc.
 
 To Do
-- add rails_admin
-- upgrade to 3.1.2/1.9.3
-- use backbone/coffeescript
-
+- error message when no players defined if trying to do winner of line/house
 - show net winnings (money won less money spent )
 - joint/multiple winners (currently all db/views assume only 1 person can win - this is not true)
 - on new game reset auto (turn off when starting a new game)

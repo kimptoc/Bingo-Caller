@@ -1,68 +1,10 @@
 
 <script type="text/javascript">
-  cancel_auto = false;
 
 	$(function() {
-		$("#tabBottom").tabs();
-		$("#tabBottom").tabs("select",0);
-        <% if params['stab'] %>
-        $("#tabBottom").tabs("select",<%= params['stab'] %>);
-        <% end %>
-		$( "#accordionTL" ).accordion();
-		$( "#accordionTR" ).accordion();
-
-        var pElement = document.getElementById("audio");
-
-            pElement.load();
-            pElement.play();
-
-        <% if caller_session['auto'] %>
-        timer=setTimeout('BingoCaller.next_ball("<%= url_for :action => :next_ball %>")',1000*<%= @game.secs_between_calls %>);
-        <% end %>
+        BingoCaller.start(<%= caller_session['auto'].present? %>, "<%= params['stab'] %>",'<%= url_for :action => :next_ball %>',<%= @game.secs_between_calls %>);
     });
 
-    function handleWinnerLine()
-    {
-        cancel_auto = true;
-        $( "#dialog-winner-line" ).dialog({
-        resizable: false,
-        height:140,
-        modal: true,
-        buttons: {
-            "Save winner": function() {
-                $( this ).dialog( "close" );
-                document.form_winner_line.submit();
-            },
-            Cancel: function() {
-                $( this ).dialog( "close" );
-            <% if caller_session['auto'] %>
-                window.location = '<%= url_for :action => :next_ball %>'
-            <% end %>
-            }
-        }
-    });
-    }
-    function handleWinnerHouse()
-    {
-        cancel_auto = true;
-        $( "#dialog-winner-house" ).dialog({
-        resizable: false,
-        height:140,
-        modal: true,
-        buttons: {
-            "Save winner": function() {
-                $( this ).dialog( "close" );
-                document.form_winner_house.submit();
-            },
-            Cancel: function() {
-                $( this ).dialog( "close" );
-            <% if caller_session['auto'] %>
-                window.location = '<%= url_for :action => :next_ball %>'
-            <% end %>
-            }
-        }
-    });
-    }
 	</script>
 
 
@@ -81,9 +23,9 @@
 <% end %>
 </div>
       <% if @game.player_with_first_line == nil %>
-          <span class="game_controls"><button onclick="handleWinnerLine();">Line?</button></span>
+          <span class="game_controls"><button onclick="BingoCaller.handleWinnerLine(<%= caller_session['auto'].present? %>,'<%= url_for :action => :next_ball %>');">Line?</button></span>
       <% elsif @game.player_with_bingo == nil %>
-          <span class="game_controls"><button onclick="handleWinnerHouse();">House?</button></span>
+          <span class="game_controls"><button onclick="BingoCaller.handleWinnerHouse(<%= caller_session['auto'].present? %>,'<%= url_for :action => :next_ball %>');">House?</button></span>
       <% else %>
           <span class="game_controls"><%= link_to 'Another?',:action => :same_again %></span>
       <% end %>

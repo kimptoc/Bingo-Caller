@@ -26,16 +26,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abc17238-13f3-4dd4-9fcc-e3a6c56a83b1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/utils/thread_helper.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/initializers/logger_formatter.rb" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/assets/javascripts/rails.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.generators" afterPath="$PROJECT_DIR$/.idea/.generators" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/bingo-caller.iml" afterPath="$PROJECT_DIR$/.idea/bingo-caller.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README" afterPath="$PROJECT_DIR$/README" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/backbone/bingo_caller.js.coffee" afterPath="$PROJECT_DIR$/app/assets/javascripts/backbone/bingo_caller.js.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/bingo_sessions_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/bingo_sessions_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/bingo_sessions/show.html.erb" afterPath="$PROJECT_DIR$/app/views/bingo_sessions/show.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/games/show.html.erb" afterPath="$PROJECT_DIR$/app/views/games/show.html.erb" />
     </list>
     <ignored path="$USER_HOME_GRIFFON$/" />
@@ -112,16 +104,61 @@
       <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/bingo_sessions/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="0" selection-start="908" selection-end="908" vertical-scroll-proportion="-9.791667">
+            <state line="29" column="0" selection-start="908" selection-end="908" vertical-scroll-proportion="-18.125">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/games/show.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="79" selection-start="129" selection-end="129" vertical-scroll-proportion="-2.5">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="player_games_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/player_games_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="36" selection-start="464" selection-end="464" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="players_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/players_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="34" selection-start="534" selection-end="534" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bingo_caller.js.coffee" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/backbone/bingo_caller.js.coffee">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="38" column="70" selection-start="1020" selection-end="1020" vertical-scroll-proportion="0.20765027">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="76" selection-start="779" selection-end="779" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/bingo_sessions/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="73" selection-start="496" selection-end="496" vertical-scroll-proportion="0.63047284">
+            <state line="24" column="73" selection-start="497" selection-end="497" vertical-scroll-proportion="-15.0">
               <folding />
             </state>
           </provider>
@@ -176,15 +213,15 @@
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/fluid960gs/text.css" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/bingo-game.css" />
-        <option value="$PROJECT_DIR$/README" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/scaffold.css" />
         <option value="$PROJECT_DIR$/config/initializers/logger_formatter.rb" />
         <option value="$PROJECT_DIR$/app/controllers/bingo_sessions_controller.rb" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/backbone/bingo_caller.js.coffee" />
-        <option value="$PROJECT_DIR$/app/views/games/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/bingo_sessions/index.html.erb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/views/bingo_sessions/show.html.erb" />
+        <option value="$PROJECT_DIR$/README" />
+        <option value="$PROJECT_DIR$/app/views/games/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/backbone/bingo_caller.js.coffee" />
       </list>
     </option>
   </component>
@@ -467,62 +504,6 @@
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stylesheets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Bingo-Caller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Bingo-Caller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stylesheets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="le-frog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Bingo-Caller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Bingo-Caller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stylesheets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fluid960gs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -569,24 +550,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="backbone" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Bingo-Caller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Bingo-Caller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1155,21 +1118,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="5" selection-start="208" selection-end="208" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/scaffold.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="17" selection-start="140" selection-end="140" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="313" selection-end="313" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/games_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="96" column="0" selection-start="2081" selection-end="2081" vertical-scroll-proportion="0.0" />
@@ -1213,16 +1161,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/backbone/bingo_caller.js.coffee">
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="24" selection-start="254" selection-end="265" vertical-scroll-proportion="0.0">
+        <state line="9" column="0" selection-start="188" selection-end="188" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/games/show.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/bingo_sessions/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="8" selection-start="1280" selection-end="1280" vertical-scroll-proportion="0.3046875">
+        <state line="24" column="73" selection-start="497" selection-end="497" vertical-scroll-proportion="-15.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/bingo_sessions/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="0" selection-start="908" selection-end="908" vertical-scroll-proportion="-18.125">
           <folding />
         </state>
       </provider>
@@ -1234,23 +1189,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/bingo_sessions/index.html.erb">
+    <entry file="file://$PROJECT_DIR$/README">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="0" selection-start="908" selection-end="908" vertical-scroll-proportion="-9.791667">
+        <state line="16" column="76" selection-start="779" selection-end="779" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/player_games_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="188" selection-end="188" vertical-scroll-proportion="0.0">
+        <state line="20" column="36" selection-start="464" selection-end="464" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/bingo_sessions/show.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/games/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="73" selection-start="496" selection-end="496" vertical-scroll-proportion="0.63047284">
+        <state line="4" column="79" selection-start="129" selection-end="129" vertical-scroll-proportion="-2.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/players_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="34" selection-start="534" selection-end="534" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/backbone/bingo_caller.js.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="70" selection-start="1020" selection-end="1020" vertical-scroll-proportion="0.20765027">
           <folding />
         </state>
       </provider>
