@@ -7,7 +7,16 @@ class GamesController < ApplicationController
 
     @game.next_ball
 
-    redirect_to @game
+
+    respond_to do |format|
+      format.html { redirect_to @game }
+      format.xml  { render :xml => @game }
+      format.json {
+        game_json = get_game_status()
+        render :json => game_json
+      }
+    end
+
    end
 
   def record_winner_line
@@ -92,14 +101,19 @@ class GamesController < ApplicationController
     end
   end
 
-  def status
+  def get_game_status
     game = Game.find(params[:id])
     game_json = {}
     if game.present?
-      called_balls = game.called_numbers.select(:called_ball).order(:called_time).reverse.map { |b| b.called_ball}
+      called_balls = game.called_numbers.select(:called_ball).order(:called_time).reverse.map { |b| b.called_ball }
       game_json[:called_balls] = called_balls
       game_json[:all_balls] = (1..game.max_balls).to_a
     end
+    game_json
+  end
+
+  def status
+    game_json = get_game_status()
     #respond_with(game_json)
     respond_to do |format|
       format.json  { render :json => game_json }

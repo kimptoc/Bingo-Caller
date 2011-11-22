@@ -1,6 +1,7 @@
 class BingoCaller.GameSummaryView extends Backbone.View
   template: JST["backbone/templates/game_summary_view"]
   el: '#game-summary'
+
   initialize: ->
     @model.bind('change',@render)
 #    App.favorites.bind('add', this.renderItem, this)

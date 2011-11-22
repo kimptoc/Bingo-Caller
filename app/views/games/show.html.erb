@@ -37,10 +37,7 @@
 </div>
 
   <div class="grid_6">
-  <span class="game_controls">
-    <button id="next_ball">Next2</button>
-<%= link_to 'Next',:action => :next_ball %>
-   </span>
+    <span id="game-controls"></span>
     <% if caller_session['auto'] == true %>
         <span class="game_controls"><button disabled="true">Auto</button></span>
     <% else %>
@@ -223,3 +220,5 @@
   <% end %>
 
 </div>
+
+<button>Testing123</button>
