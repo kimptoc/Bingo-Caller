@@ -12,7 +12,7 @@ window.BingoCaller =
 
 BingoCaller.cancel_auto = false
 
-BingoCaller.start= (auto_mode, selected_tab, next_ball_url, secs_between_calls) ->
+BingoCaller.start= (auto_mode, selected_tab, next_ball_url, secs_between_calls, game_id) ->
   $("#tabBottom").tabs()
   $("#tabBottom").tabs("select",0)
   $("#tabBottom").tabs("select",selected_tab) if selected_tab
@@ -25,6 +25,7 @@ BingoCaller.start= (auto_mode, selected_tab, next_ball_url, secs_between_calls) 
 
   timer=setTimeout((-> BingoCaller.next_ball(next_ball_url)),1000*secs_between_calls) if auto_mode
 
+  router = new BingoCaller.GameRouter(game_id)
 
 BingoCaller.next_ball= (next_ball_url) ->
   return if (BingoCaller.cancel_auto)

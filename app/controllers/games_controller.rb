@@ -92,6 +92,21 @@ class GamesController < ApplicationController
     end
   end
 
+  def status
+    game = Game.find(params[:id])
+    game_json = {}
+    if game.present?
+      called_balls = game.called_numbers.select(:called_ball).order(:called_time).reverse.map { |b| b.called_ball}
+      game_json[:called_balls] = called_balls
+      game_json[:all_balls] = (1..game.max_balls).to_a
+    end
+    #respond_with(game_json)
+    respond_to do |format|
+      format.json  { render :json => game_json }
+    end
+
+  end
+
   # GET /games/new
   # GET /games/new.xml
   def new

@@ -1,0 +1,19 @@
+<div class="grid_1">&nbsp;</div>
+<div class="grid_1">
+  <% for (var i = 0; i < all_balls.length; i++) { %>
+      <!--< %-->
+         <!--ball_style="color:plum;"-->
+      <!--if @game.has_been_called? ball-->
+          <!--ball_style = "font-weight:bold;color:yellow;"-->
+      <!--end-->
+      <!--%>-->
+    <!--<span style="< %= ball_style %>" id="game-ball-< %= all_balls[i] %>">-->
+    <span class="ball_not_called" id="game-ball-<%= all_balls[i] %>">
+      <%= all_balls[i] %>
+    </span><br>
+      <% if (all_balls[i] % 10 == 0) { %>
+          </div>
+          <div class="grid_1">
+      <% }; %>
+  <% }; %>
+</div>

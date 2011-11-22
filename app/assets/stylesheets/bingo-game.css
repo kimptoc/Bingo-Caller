@@ -5,3 +5,12 @@
 li .ui-button-text {
     font-size: 12px;
 }
+
+.ball_not_called {
+    color:plum;
+}
+
+.ball_called {
+    font-weight:bold;
+    color:yellow;
+}

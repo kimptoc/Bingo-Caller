@@ -2,7 +2,10 @@
 <script type="text/javascript">
 
 	$(function() {
-        BingoCaller.start(<%= caller_session['auto'].present? %>, "<%= params['stab'] %>",'<%= url_for :action => :next_ball %>',<%= @game.secs_between_calls %>);
+        BingoCaller.start(<%= caller_session['auto'].present? %>,
+                "<%= params['stab'] %>",
+                '<%= url_for :action => :next_ball %>',
+                <%= @game.secs_between_calls %>,<%= @game.id %>);
     });
 
 	</script>
@@ -35,6 +38,7 @@
 
   <div class="grid_6">
   <span class="game_controls">
+    <button id="next_ball">Next2</button>
 <%= link_to 'Next',:action => :next_ball %>
    </span>
     <% if caller_session['auto'] == true %>
@@ -85,24 +89,7 @@
     <li><a href="#tab-session">Session</a></li>
   </ul>
   <div class="grid_12" id="tab-balls" style="font-size:16pt">
-  <div class="grid_1">&nbsp;</div>
-  <div class="grid_1">
-    <% (1..@game.max_balls).each { | ball | %>
-        <%
-           ball_style="color:plum;"
-        if @game.has_been_called? ball
-            ball_style = "font-weight:bold;color:yellow;"
-        end
-        %>
-      <span style="<%= ball_style %>">
-        <%= ball %><br>
-      </span>
-        <% if ball%10 == 0 %>
-            </div>
-            <div class="grid_1">
-        <% end %>
-    <% } %>
-  </div>
+    <span id="game-summary"/>
   </div>
   <div class="grid_12" id="tab-session" >
     <% if @game.bingo_session %>
