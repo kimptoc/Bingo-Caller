@@ -26,14 +26,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="abc17238-13f3-4dd4-9fcc-e3a6c56a83b1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/backbone/templates/game_controls_view.jst.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/bingo-caller.iml" afterPath="$PROJECT_DIR$/.idea/bingo-caller.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/backbone/templates/game_last_ball_view.jst.ejs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/backbone/views/game_last_ball_view.js.coffee" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/backbone/bingo_caller.js.coffee" afterPath="$PROJECT_DIR$/app/assets/javascripts/backbone/bingo_caller.js.coffee" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/backbone/models/game.js.coffee" afterPath="$PROJECT_DIR$/app/assets/javascripts/backbone/models/game.js.coffee" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/backbone/routers/game_router.js.coffee" afterPath="$PROJECT_DIR$/app/assets/javascripts/backbone/routers/game_router.js.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/backbone/views/game_controls_view.js.coffee" afterPath="$PROJECT_DIR$/app/assets/javascripts/backbone/views/game_controls_view.js.coffee" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/backbone/views/game_summary_view.js.coffee" afterPath="$PROJECT_DIR$/app/assets/javascripts/backbone/views/game_summary_view.js.coffee" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/games_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/games_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/games/show.html.erb" afterPath="$PROJECT_DIR$/app/views/games/show.html.erb" />
     </list>
@@ -99,28 +97,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="game_router.js.coffee" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/backbone/routers/game_router.js.coffee">
+      <file leaf-file-name="game_last_ball_view.jst.ejs" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/backbone/templates/game_last_ball_view.jst.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="68" selection-start="298" selection-end="298" vertical-scroll-proportion="0.0">
+            <state line="17" column="47" selection-start="951" selection-end="951" vertical-scroll-proportion="-10.625">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bingo_caller.js.coffee" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/backbone/bingo_caller.js.coffee">
+      <file leaf-file-name="routes.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/routes.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="27" selection-start="724" selection-end="724" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="game_controls_view.jst.ejs" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/backbone/templates/game_controls_view.jst.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="29" selection-start="58" selection-end="58" vertical-scroll-proportion="0.0">
+            <state line="17" column="51" selection-start="364" selection-end="364" vertical-scroll-proportion="0.44347826">
               <folding />
             </state>
           </provider>
@@ -129,34 +118,61 @@
       <file leaf-file-name="games_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/games_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="0" selection-start="319" selection-end="319" vertical-scroll-proportion="0.0">
+            <state line="49" column="46" selection-start="1003" selection-end="1003" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mime_responds.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.3-p0@p-bingo-caller/gems/actionpack-3.1.2/lib/action_controller/metal/mime_responds.rb">
+      <file leaf-file-name="game.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/game.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="274" column="32" selection-start="9827" selection-end="9827" vertical-scroll-proportion="0.0">
+            <state line="4" column="31" selection-start="209" selection-end="226" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rendering.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.3-p0@p-bingo-caller/gems/actionpack-3.1.2/lib/action_controller/metal/rendering.rb">
+      <file leaf-file-name="bingo_caller.js.coffee" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/backbone/bingo_caller.js.coffee">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="9" selection-start="500" selection-end="500" vertical-scroll-proportion="0.0">
+            <state line="34" column="0" selection-start="897" selection-end="925" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/games/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="43" selection-start="805" selection-end="805" vertical-scroll-proportion="0.0">
+            <state line="202" column="0" selection-start="5744" selection-end="5744" vertical-scroll-proportion="-17.833334">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="game_router.js.coffee" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/backbone/routers/game_router.js.coffee">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="78" selection-start="378" selection-end="378" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="game_last_ball_view.js.coffee" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/backbone/views/game_last_ball_view.js.coffee">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="31" column="0" selection-start="735" selection-end="888" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="game.js.coffee" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/backbone/models/game.js.coffee">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="30" selection-start="497" selection-end="497" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -166,24 +182,6 @@
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/backbone/views/game_controls_view.js.coffee">
           <provider selected="true" editor-type-id="text-editor">
             <state line="10" column="16" selection-start="280" selection-end="280" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="game.js.coffee" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/backbone/models/game.js.coffee">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="43" selection-start="324" selection-end="324" vertical-scroll-proportion="0.20869565">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bingo-game.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/bingo-game.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="4" selection-start="165" selection-end="165" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -222,21 +220,21 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/bingo_sessions/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/bingo_sessions/show.html.erb" />
         <option value="$PROJECT_DIR$/README" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/backbone/bingo_caller.js.coffee" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/backbone/templates/game_summary_view.jst.ejs" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/bingo-game.css" />
         <option value="$PROJECT_DIR$/app/controllers/bingo_sessions_controller.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/backbone/views/game_controls.js.coffee" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/backbone/routers/game_router.js.coffee" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/backbone/views/game_summary_view.js.coffee" />
-        <option value="$PROJECT_DIR$/app/views/games/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/games_controller.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/backbone/templates/game_controls_view.jst.ejs" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/backbone/views/game_controls_view.js.coffee" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/backbone/routers/game_router.js.coffee" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/backbone/bingo_caller.js.coffee" />
+        <option value="$PROJECT_DIR$/app/controllers/games_controller.rb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/backbone/templates/game_last_ball_view.jst.ejs" />
+        <option value="$PROJECT_DIR$/app/views/games/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/backbone/views/game_last_ball_view.js.coffee" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/backbone/models/game.js.coffee" />
       </list>
     </option>
@@ -769,6 +767,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/assets/javascripts/backbone/templates" />
+      <recent name="$PROJECT_DIR$/app/assets/javascripts/backbone/views" />
       <recent name="$PROJECT_DIR$/app/views/players" />
       <recent name="$PROJECT_DIR$/test/functional" />
     </key>
@@ -1312,72 +1312,9 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/controllers/bingo_sessions_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="9" selection-start="9" selection-end="9" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/called_numbers_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/player_games_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/players_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="571" selection-end="684" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/backbone/views/game_summary_view.js.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="135" selection-end="152" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/games/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="200" column="5" selection-start="5864" selection-end="5864" vertical-scroll-proportion="-125.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/bingo-game.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="4" selection-start="165" selection-end="165" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/backbone/routers/game_router.js.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="68" selection-start="298" selection-end="298" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/backbone/bingo_caller.js.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="27" selection-start="724" selection-end="724" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="43" selection-start="805" selection-end="805" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1396,16 +1333,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/games_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/backbone/templates/game_controls_view.jst.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="319" selection-end="319" vertical-scroll-proportion="0.0">
+        <state line="1" column="29" selection-start="58" selection-end="58" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/backbone/templates/game_controls_view.jst.ejs">
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/backbone/templates/game_summary_view.jst.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="29" selection-start="58" selection-end="58" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/backbone/views/game_summary_view.js.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="19" selection-start="152" selection-end="186" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/backbone/routers/game_router.js.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="78" selection-start="378" selection-end="378" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/games/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="202" column="0" selection-start="5744" selection-end="5744" vertical-scroll-proportion="-17.833334">
           <folding />
         </state>
       </provider>
@@ -1417,9 +1375,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/game.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="31" selection-start="209" selection-end="226" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/backbone/views/game_last_ball_view.js.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="0" selection-start="735" selection-end="888" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/backbone/templates/game_last_ball_view.jst.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="47" selection-start="951" selection-end="951" vertical-scroll-proportion="-10.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/backbone/bingo_caller.js.coffee">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="0" selection-start="897" selection-end="925" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/backbone/models/game.js.coffee">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="43" selection-start="324" selection-end="324" vertical-scroll-proportion="0.20869565">
+        <state line="17" column="30" selection-start="497" selection-end="497" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/games_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="46" selection-start="1003" selection-end="1003" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="51" selection-start="364" selection-end="364" vertical-scroll-proportion="0.44347826">
           <folding />
         </state>
       </provider>

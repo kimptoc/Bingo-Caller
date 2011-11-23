@@ -14,27 +14,7 @@
 
 <div class="container_16">
 
-  <div class="grid_10" id="accordionTL">
-	<h3><a href="#">Current Ball</a></h3>
-    <div>
-    <div style="text-align:center;width:100%">
-<div style="font-size:200pt">
-<% if @game.last_ball_called %>
-<%= @game.last_ball_called %>
-<% else %>
-          &nbsp;
-<% end %>
-</div>
-      <% if @game.player_with_first_line == nil %>
-          <span class="game_controls"><button onclick="BingoCaller.handleWinnerLine(<%= caller_session['auto'].present? %>,'<%= url_for :action => :next_ball %>');">Line?</button></span>
-      <% elsif @game.player_with_bingo == nil %>
-          <span class="game_controls"><button onclick="BingoCaller.handleWinnerHouse(<%= caller_session['auto'].present? %>,'<%= url_for :action => :next_ball %>');">House?</button></span>
-      <% else %>
-          <span class="game_controls"><%= link_to 'Another?',:action => :same_again %></span>
-      <% end %>
-      </div>
-</div>
-</div>
+  <span id="game-last-ball"></span>
 
   <div class="grid_6">
     <span id="game-controls"></span>
@@ -220,5 +200,3 @@
   <% end %>
 
 </div>
-
-<button>Testing123</button>

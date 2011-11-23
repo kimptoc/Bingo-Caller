@@ -16,7 +16,7 @@ BingoCaller.start= (auto_mode, selected_tab, next_ball_url, secs_between_calls, 
   $("#tabBottom").tabs()
   $("#tabBottom").tabs("select",0)
   $("#tabBottom").tabs("select",selected_tab) if selected_tab
-  $("#accordionTL").accordion()
+#  $("#accordionTL").accordion()
   $("#accordionTR").accordion()
 
   pElement = document.getElementById("audio");

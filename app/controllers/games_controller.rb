@@ -109,7 +109,10 @@ class GamesController < ApplicationController
       game_json[:called_balls] = called_balls
       game_json[:all_balls] = (1..game.max_balls).to_a
     end
-    game_json
+    game_json[:player_with_first_line_id] = game.player_with_first_line_id
+    game_json[:player_with_bingo_id] = game.player_with_bingo_id
+
+    return game_json
   end
 
   def status
