@@ -46,7 +46,17 @@ class GamesController < ApplicationController
 
     new_game = Game.copy_game game
 
-    redirect_to new_game
+    respond_to do |format|
+      format.html {
+        Rails.logger.debug "same_again.html"
+        redirect_to new_game
+      }
+      format.json  {
+        Rails.logger.debug "same_again.json"
+        render :json => new_game
+      }
+    end
+
   end
 
   def enable_auto
@@ -58,7 +68,13 @@ class GamesController < ApplicationController
   def disable_auto
     @game = Game.find(params[:id])
     caller_session['auto'] = false
-    redirect_to @game
+    respond_to do |format|
+      format.html {
+        Rails.logger.info "disable_auto - redirect to game/show"
+        redirect_to @game
+      }
+      format.xml  { render :xml => @game }
+    end
   end
 
   # GET /games
@@ -75,6 +91,7 @@ class GamesController < ApplicationController
   # GET /games/1
   # GET /games/1.xml
   def show
+    Rails.logger.debug "GamesController.show"
     @game = Game.find(params[:id])
     @player = Player.new
     @player.bingo_session = @game.bingo_session
@@ -115,7 +132,7 @@ class GamesController < ApplicationController
     return game_json
   end
 
-  def status
+  def game_status
     game_json = get_game_status()
     #respond_with(game_json)
     respond_to do |format|

@@ -25,7 +25,7 @@ BingoCaller::Application.routes.draw do
   match 'games/:id/record_winner_line' => 'games#record_winner_line'
   match 'games/:id/record_winner_bingo' => 'games#record_winner_bingo'
   match 'games/:id/same_again' => 'games#same_again'
-  match 'games/:id/status' => 'games#status'
+  match 'games/:id/status' => 'games#game_status'
 
   resources :games
 
