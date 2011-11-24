@@ -4,9 +4,10 @@ BingoCaller::Application.routes.draw do
 
   resources :player_games
 
-  resources :bingo_sessions do
-    resources :games
-  end
+  resources :bingo_sessions
+  #resources :bingo_sessions do
+  #  resources :games
+  #end
 
   root :to => "bingo_sessions#index"
 
@@ -16,7 +17,6 @@ BingoCaller::Application.routes.draw do
 
   resources :called_numbers
 
-  resources :games
   resources :players
 
   match 'games/:id/next_ball' => 'games#next_ball'
@@ -26,6 +26,8 @@ BingoCaller::Application.routes.draw do
   match 'games/:id/record_winner_bingo' => 'games#record_winner_bingo'
   match 'games/:id/same_again' => 'games#same_again'
   match 'games/:id/status' => 'games#status'
+
+  resources :games
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
