@@ -7,15 +7,7 @@ class GamesController < ApplicationController
 
     @game.next_ball
 
-
-    respond_to do |format|
-      format.html { redirect_to @game }
-      format.xml  { render :xml => @game }
-      format.json {
-        game_json = get_game_status()
-        render :json => game_json
-      }
-    end
+    redirect_to @game
 
    end
 
@@ -32,7 +24,7 @@ class GamesController < ApplicationController
 
   def record_winner_bingo
     @game = Game.find(params[:id])
-    player = @game.bingo_session.players.find(params[:game]["player_with_bingo"])
+    player = @game.bingo_session.players.find(params[:player_with_bingo])
 
     @game.player_with_bingo = player
 
@@ -46,16 +38,7 @@ class GamesController < ApplicationController
 
     new_game = Game.copy_game game
 
-    respond_to do |format|
-      format.html {
-        Rails.logger.debug "same_again.html"
-        redirect_to new_game
-      }
-      format.json  {
-        Rails.logger.debug "same_again.json"
-        render :json => new_game
-      }
-    end
+    redirect_to new_game
 
   end
 
