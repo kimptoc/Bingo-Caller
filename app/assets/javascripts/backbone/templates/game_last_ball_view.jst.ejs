@@ -10,13 +10,6 @@
     <% }; %>
     </div>
       <span class="game_controls"><button id="action-button">Uh oh -should not see this?</button></span>
-    <!--< % if (!player_with_first_line_id) { %>-->
-      <!--<span class="game_controls"><button onclick="BingoCaller.handleWinnerLine(< %= caller_session['auto'].present? %>,'< %= url_for :action => :next_ball %>');">Line?</button></span>-->
-    <!--< % } else if (!player_with_bingo_id) { %>-->
-      <!--<span class="game_controls"><button onclick="BingoCaller.handleWinnerHouse(< %= caller_session['auto'].present? %>,'< %= url_for :action => :next_ball %>');">House?</button></span>-->
-    <!--< % } else { %>-->
-      <!--<span class="game_controls">< %= link_to 'Another?',:action => :same_again %></span>-->
-    <!--< % }; %>-->
 </div>
 </div>
 </div>

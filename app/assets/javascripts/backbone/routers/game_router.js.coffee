@@ -5,6 +5,7 @@ class BingoCaller.GameRouter extends Backbone.Router
     @view = new BingoCaller.GameSummaryView(model: @game_status)
     @controls = new BingoCaller.GameControlsView(model: @game_status)
     @current_ball_view = new BingoCaller.GameLastBallView(model: @game_status)
+    @last_few_balls_view = new BingoCaller.GameLastFewBallsView(model: @game_status)
     @game_status.fetch()
 #    @game_status.fetch(success: => @view.render())
 #    @status = new Ecom1.Models.Status

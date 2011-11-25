@@ -32,17 +32,7 @@
   
   <p>&nbsp;</p>
 
-  <div class="grid_5" id="accordionTR">
-  <h3><a href="#">Last Few Balls</a></h3>
-  <div style="font-size:larger">
-  <ul>
-  <% @game.called_numbers.reverse[0..7].each { | cn | %>
-    <li><%= cn.called_ball %></li>
-  <% } %>
-  </ul>
-
-  </div>
-</div>
+  <span id="game-last-few-balls"></span>
 
   <p>&nbsp;</p>
   <p>&nbsp;</p>
