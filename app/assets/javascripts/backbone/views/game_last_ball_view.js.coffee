@@ -22,10 +22,41 @@ class BingoCaller.GameLastBallView extends Backbone.View
     action_button.button()
 
   handleWinnerLine: =>
-    @model.handleWinnerLine()
+    console.log("handle winner line/view")
+    BingoCaller.cancel_auto = true
+    line_dialog = $( "#dialog-winner-line" )
+    line_dialog.dialog
+      resizable: false
+      height:180
+      modal: true
+      buttons:
+        "Save winner": =>
+          line_dialog.dialog( "close" )
+          @model.handleWinnerLine($("#game_player_with_first_line").val())
+#          document.form_winner_line.submit()
+          BingoCaller.cancel_auto = false
+        Cancel: ->
+          line_dialog.dialog( "close" )
+          BingoCaller.cancel_auto = false
+
 
   handleWinnerHouse: =>
-    @model.handleWinnerHouse()
+    console.log("handle winner house/view")
+    BingoCaller.cancel_auto = true
+    $( "#dialog-winner-house" ).dialog
+      resizable: false
+      height:180
+      modal: true
+      buttons:
+        "Save winner": ->
+          $( this ).dialog( "close" )
+          @model.handleWinnerHouse()
+#          document.form_winner_house.submit()
+          BingoCaller.cancel_auto = false
+        Cancel: ->
+          $( this ).dialog( "close" )
+#          window.location = next_ball_url if auto_mode
+          BingoCaller.cancel_auto = false
 
   anotherGame: =>
     @model.anotherGame()

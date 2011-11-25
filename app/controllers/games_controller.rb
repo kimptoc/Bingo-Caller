@@ -21,7 +21,7 @@ class GamesController < ApplicationController
 
   def record_winner_line
     @game = Game.find(params[:id])
-    player = @game.bingo_session.players.find(params[:game]["player_with_first_line"])
+    player = @game.bingo_session.players.find(params[:player_with_first_line])
 
     @game.player_with_first_line = player
 
