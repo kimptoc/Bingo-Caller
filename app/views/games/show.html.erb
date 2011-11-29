@@ -18,16 +18,6 @@
 
   <div class="grid_6">
     <span id="game-controls"></span>
-    <% if caller_session['auto'] == true %>
-        <span class="game_controls"><button disabled="true">Auto</button></span>
-    <% else %>
-        <span class="game_controls"> <%= link_to 'Auto',:action => :enable_auto %> </span>
-    <% end %>
-    <% if caller_session['auto'] == false %>
-        <span class="game_controls"><button disabled="true">Pause</button></span>
-    <% else %>
-        <span class="game_controls"><%= link_to 'Pause',:action => :disable_auto %></span>
-    <% end %>
 </div>
   
   <p>&nbsp;</p>

@@ -20,8 +20,7 @@ BingoCaller::Application.routes.draw do
   resources :players
 
   match 'games/:id/next_ball' => 'games#next_ball'
-  match 'games/:id/enable_auto' => 'games#enable_auto'
-  match 'games/:id/disable_auto' => 'games#disable_auto'
+  match 'games/:id/auto_toggle' => 'games#auto_toggle'
   match 'games/:id/record_winner_line' => 'games#record_winner_line'
   match 'games/:id/record_winner_bingo' => 'games#record_winner_bingo'
   match 'games/:id/same_again' => 'games#same_again'

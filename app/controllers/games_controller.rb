@@ -42,23 +42,29 @@ class GamesController < ApplicationController
 
   end
 
-  def enable_auto
+  def auto_toggle
     @game = Game.find(params[:id])
-    caller_session['auto'] = true
+    caller_session['auto'] = ! caller_session['auto']
     redirect_to @game
   end
 
-  def disable_auto
-    @game = Game.find(params[:id])
-    caller_session['auto'] = false
-    respond_to do |format|
-      format.html {
-        Rails.logger.info "disable_auto - redirect to game/show"
-        redirect_to @game
-      }
-      format.xml  { render :xml => @game }
-    end
-  end
+  #def enable_auto
+  #  @game = Game.find(params[:id])
+  #  caller_session['auto'] = true
+  #  redirect_to @game
+  #end
+
+  #def disable_auto
+  #  @game = Game.find(params[:id])
+  #  caller_session['auto'] = false
+  #  respond_to do |format|
+  #    format.html {
+  #      Rails.logger.info "disable_auto - redirect to game/show"
+  #      redirect_to @game
+  #    }
+  #    format.xml  { render :xml => @game }
+  #  end
+  #end
 
   # GET /games
   # GET /games.xml
@@ -111,6 +117,8 @@ class GamesController < ApplicationController
     end
     game_json[:player_with_first_line_id] = game.player_with_first_line_id
     game_json[:player_with_bingo_id] = game.player_with_bingo_id
+    game_json[:auto_mode] = caller_session['auto']
+    game_json[:secs_between_calls] = game.secs_between_calls
 
     return game_json
   end

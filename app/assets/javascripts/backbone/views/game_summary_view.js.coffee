@@ -8,7 +8,7 @@ class BingoCaller.GameSummaryView extends Backbone.View
 #    App.favorites.bind('reset', this.render, this)
 
   render: =>
-    console.log("model:",@model)
+    console.log("render summary/model:",@model)
     $(@el).html(@template( @model.toJSON() ))
     console.log("model.called_balls:",@model.get('called_balls'))
     for called_ball in @model.get('called_balls')

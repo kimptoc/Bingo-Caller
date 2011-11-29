@@ -5,10 +5,18 @@ class BingoCaller.Game extends Backbone.Model
     @next_ball_url = "/games/#{options['game_id']}/next_ball.json"
     @winner_line_url = "/games/#{options['game_id']}/record_winner_line.json"
     @winner_bingo_url = "/games/#{options['game_id']}/record_winner_bingo.json"
+    @auto_toggle_url = "/games/#{options['game_id']}/auto_toggle.json"
+    @bind('change', @resetPauseAuto)
+
+  resetPauseAuto: ->
+    BingoCaller.pause_auto = false
+
+  autoToggle: ->
+    jQuery.ajax(@auto_toggle_url, success: (=> @fetch()))
 
   nextBall: =>
-    console.log("Game.nextBall")
-    jQuery.ajax(@next_ball_url, success: (=> @fetch()))
+    console.log("Game.nextBall:auto:#{@get("auto_mode")}, cancel:#{BingoCaller.cancel_auto}, pause:#{BingoCaller.pause_auto}", this)
+    jQuery.ajax(@next_ball_url, success: (=> @fetch())) if @get("auto_mode") == true and BingoCaller.cancel_auto == false and BingoCaller.pause_auto == false
 
   handleWinnerLine: (player_id) =>
     console.log("Game.line!",player_id)
@@ -21,6 +29,7 @@ class BingoCaller.Game extends Backbone.Model
   anotherGame: =>
     console.log("Game.another!")
     window.location = "/games/#{@get 'game_id'}/same_again"
+
 
 #  urlRoot: 'games/game_id/status.json'
 

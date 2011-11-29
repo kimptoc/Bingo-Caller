@@ -11,6 +11,7 @@ window.BingoCaller =
   Views: {}
 
 BingoCaller.cancel_auto = false
+BingoCaller.pause_auto = false
 
 BingoCaller.start= (auto_mode, selected_tab, next_ball_url, secs_between_calls, game_id) ->
   $("#tabBottom").tabs()

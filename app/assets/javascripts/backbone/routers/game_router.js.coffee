@@ -13,6 +13,12 @@ class BingoCaller.GameRouter extends Backbone.Router
 #    @view = new Ecom1.StatusView(model: @status)
 #    setInterval((=> @status.dofetch()), 1500)
 #    @status.fetch()
+    @loop_started = false
+    @game_status.bind('change',@model_change)
+
+  model_change: =>
+    setInterval( (=> @game_status.nextBall()), 1000*@game_status.get("secs_between_calls")) unless @loop_started
+    @loop_started = true
 
 #  dofetch: ->
 #    @status.dofetch()

@@ -6,6 +6,6 @@ class BingoCaller.GameLastFewBallsView extends Backbone.View
     @model.bind('change',@render)
 
   render: =>
-    console.log("model:",@model)
+    console.log("render last few balls/model:",@model)
     $(@el).html(@template( @model.toJSON() ))
     $("#accordionTR").accordion()
