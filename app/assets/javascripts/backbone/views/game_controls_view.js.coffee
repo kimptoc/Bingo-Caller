@@ -11,7 +11,7 @@ class BingoCaller.GameControlsView extends Backbone.View
 
   nextBall: =>
     console.log("next ball time")
-    @model.nextBall()
+    @model.nextBall(manual_click: true)
 
   autoOn: =>
     console.log "autoOn:current setting:#{@model.get("auto_mode")}"

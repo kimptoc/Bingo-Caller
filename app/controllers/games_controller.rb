@@ -77,6 +77,16 @@ class GamesController < ApplicationController
     end
   end
 
+  def get_sound_file(game)
+    return "" unless game.last_ball_called.present?
+    if rand(10) % 2 == 0
+      caller_sound = "/callers/chris1/#{game.last_ball_called}.mp3"
+    else
+      caller_sound = "/callers/jav1/#{game.last_ball_called}.mp3"
+    end
+    return caller_sound
+  end
+
   # GET /games/1
   # GET /games/1.xml
   def show
@@ -95,11 +105,7 @@ class GamesController < ApplicationController
     
     #hack, should scan dirs for options and choose from them
     #and/or give user choice of which caller to use...
-    if rand(10) % 2 == 0
-      @caller_sound = "/callers/chris1/#{@game.last_ball_called}.mp3"
-    else
-      @caller_sound = "/callers/jav1/#{@game.last_ball_called}.mp3"
-    end
+    @caller_sound = get_sound_file(@game)
 
     respond_to do |format|
       format.html { render :html => @game, :stab => params['stab'] } # show.html.erb
@@ -119,7 +125,7 @@ class GamesController < ApplicationController
     game_json[:player_with_bingo_id] = game.player_with_bingo_id
     game_json[:auto_mode] = caller_session['auto']
     game_json[:secs_between_calls] = game.secs_between_calls
-
+    game_json[:current_call_sound] = get_sound_file(game)
     return game_json
   end
 

@@ -14,9 +14,13 @@ class BingoCaller.Game extends Backbone.Model
   autoToggle: ->
     jQuery.ajax(@auto_toggle_url, success: (=> @fetch()))
 
-  nextBall: =>
-    console.log("Game.nextBall:auto:#{@get("auto_mode")}, cancel:#{BingoCaller.cancel_auto}, pause:#{BingoCaller.pause_auto}", this)
-    jQuery.ajax(@next_ball_url, success: (=> @fetch())) if @get("auto_mode") == true and BingoCaller.cancel_auto == false and BingoCaller.pause_auto == false
+  nextBall: (options)=>
+    console?.log("Game.nextBall:auto:#{@get("auto_mode")}, cancel:#{BingoCaller.cancel_auto}, pause:#{BingoCaller.pause_auto}", this)
+    #todo - fix this, should work in manual mode too
+    if @get("auto_mode") == true and BingoCaller.cancel_auto == false and BingoCaller.pause_auto == false
+      jQuery.ajax(@next_ball_url, success: (=> @fetch()))
+    else if options.manual_click == true
+      jQuery.ajax(@next_ball_url, success: (=> @fetch()))
 
   handleWinnerLine: (player_id) =>
     console.log("Game.line!",player_id)
