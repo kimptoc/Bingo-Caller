@@ -53,6 +53,10 @@ gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 
 group :development do
 #  gem "ruby-debug"
+  gem "awesome_print"
+  gem "pry"
 end
 
 #gem 'errorapp_notifier'
+#
+

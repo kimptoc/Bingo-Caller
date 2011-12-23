@@ -6,6 +6,10 @@ Test site on Heroku is here http://bingo-caller.heroku.com/games
 
 To play a game, its expected that the players will have bingo cards and markers.  This site will then track the balls called, and who has won.
 
+Conversion to Backbone/Coffeescript - core is done, working on peripheral items
+Outstanding:
+- players/game players
+
 Bugs
 - occasional/persistent error about no new/game action
 - disable auto advance when winner line/house dialog open

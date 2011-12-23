@@ -126,6 +126,7 @@ class GamesController < ApplicationController
     game_json[:auto_mode] = caller_session['auto']
     game_json[:secs_between_calls] = game.secs_between_calls
     game_json[:current_call_sound] = get_sound_file(game)
+    game_json[:bingo_session_id] = game.bingo_session_id
     return game_json
   end
 

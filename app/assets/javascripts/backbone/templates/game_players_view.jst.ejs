@@ -1,0 +1,65 @@
+
+<div class="grid_5">
+<table>
+<% for (var i = 0; i < game_players.length; i++) { %>
+<tr>
+  <form id="player_maint-<%= game_players[i].id %>">
+    <input type="hidden" name="player_game[id]" value="<%= game_players[i].id %>">
+<td><%= game_players[i].player.name %></td><td>
+  <select name="player_game[cards_played]" id="cards_to_play">
+   <% for (x=1; x<10; x++) { %>
+    <option <%= BingoCaller.is_selected(game_players[i].cards_played, x) %>><%= x %></option>
+    <% } %>
+  </select>
+</td>
+<td>
+  <% if (game.player_with_first_line && game.player_with_first_line == game_players[i].player_id) { %>**LINE**<% } %>
+  <% if (game.player_with_bingo && game.player_with_bingo == game_players[i].player_id) { %>**HOUSE**<% } %></td>
+<td>
+<button class="game_update_player">
+<span class="ui-icon ui-icon-disk" data_form_id="player_maint-<%= game_players[i].id %>" data_id="<%= game_players[i].id %>"></span>
+</button>
+</td>
+<td>
+<button class="game_delete_player">
+<span class="ui-icon ui-icon-trash" data_form_id="player_maint-<%= game_players[i].id %>" data_id="<%= game_players[i].id %>"></span>
+</button>
+</td>
+</form>
+</tr>
+<% } %>
+</table>
+</div>
+
+
+<div class="grid_11">
+  <form id="new_game_player">
+    <input type="hidden" name="game_id" value="<%= game.id %>">
+  <div class="grid_11 alpha omega">
+    Add Player:<br>
+  </div>
+    <div class="grid_11 alpha omega">Existing:
+        <select id="player_id" name="player_game[player_id]">
+          <option value="-1">[select]</option>
+        <% for (i=0; i<players.length; i++) { %>
+            <option name="player_id" value="<%= players[i].id %>"><%= players[i].name %></option>
+        <% } %>
+        </select>
+    </div>
+    <div class="grid_11 alpha omega">
+        <label for="player_other">Or New:</label><br>
+        <input type="text" name="player_other">
+    </div>
+   <div class="">
+      Cards played:
+      <select id="cards_played" name="player_game[cards_played]">
+   <% for (x=1; x<10; x++) { %>
+    <option <%= (x==3) && "selected" %>><%= x %></option>
+    <% } %>
+      </select>
+    </div>
+    <div class="">
+      <button id="game_add_player">Add</button>
+    </div>
+</form>
+</div>

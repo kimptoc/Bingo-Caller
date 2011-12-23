@@ -2,12 +2,13 @@ BingoCaller::Application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
-  resources :player_games
+  #resources :player_games
 
-  resources :bingo_sessions
-  #resources :bingo_sessions do
+  #resources :bingo_sessions
+  resources :bingo_sessions do
+    resources :players
   #  resources :games
-  #end
+  end
 
   root :to => "bingo_sessions#index"
 
@@ -15,9 +16,8 @@ BingoCaller::Application.routes.draw do
 
   devise_for :callers
 
-  resources :called_numbers
+  #resources :called_numbers
 
-  resources :players
 
   match 'games/:id/next_ball' => 'games#next_ball'
   match 'games/:id/auto_toggle' => 'games#auto_toggle'
@@ -26,7 +26,9 @@ BingoCaller::Application.routes.draw do
   match 'games/:id/same_again' => 'games#same_again'
   match 'games/:id/status' => 'games#game_status'
 
-  resources :games
+  resources :games do
+    resources :player_games
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
