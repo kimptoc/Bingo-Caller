@@ -44,7 +44,7 @@ class GamesController < ApplicationController
 
   def auto_toggle
     @game = Game.find(params[:id])
-    caller_session['auto'] = ! caller_session['auto']
+    caller_session['auto'] = ! (caller_session['auto'] || false)
     redirect_to @game
   end
 
@@ -123,10 +123,13 @@ class GamesController < ApplicationController
     end
     game_json[:player_with_first_line_id] = game.player_with_first_line_id
     game_json[:player_with_bingo_id] = game.player_with_bingo_id
-    game_json[:auto_mode] = caller_session['auto']
+    game_json[:auto_mode] = caller_session['auto'] || false
     game_json[:secs_between_calls] = game.secs_between_calls
     game_json[:current_call_sound] = get_sound_file(game)
     game_json[:bingo_session_id] = game.bingo_session_id
+
+    Rails.logger.debug "auto mode:#{game_json[:auto_mode]}"
+
     return game_json
   end
 

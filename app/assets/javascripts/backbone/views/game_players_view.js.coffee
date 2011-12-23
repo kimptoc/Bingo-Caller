@@ -9,6 +9,8 @@ class BingoCaller.GamePlayersView extends Backbone.View
   initialize: ->
     @options.players.bind('reset',@render)
     @options.game_players.bind('reset',@render)
+    @options.game.bind('reset',@render)
+    @options.game.bind('change',@render)
 
   gameUpdatePlayer: (clickedButton) ->
     clickedButton.preventDefault();

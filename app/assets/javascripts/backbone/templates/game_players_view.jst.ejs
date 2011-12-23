@@ -13,8 +13,8 @@
   </select>
 </td>
 <td>
-  <% if (game.player_with_first_line && game.player_with_first_line == game_players[i].player_id) { %>**LINE**<% } %>
-  <% if (game.player_with_bingo && game.player_with_bingo == game_players[i].player_id) { %>**HOUSE**<% } %></td>
+  <% if (game.player_with_first_line_id && game.player_with_first_line_id == game_players[i].player_id) { %>**LINE**<% } %>
+  <% if (game.player_with_bingo_id && game.player_with_bingo_id == game_players[i].player_id) { %>**HOUSE**<% } %></td>
 <td>
 <button class="game_update_player">
 <span class="ui-icon ui-icon-disk" data_form_id="player_maint-<%= game_players[i].id %>" data_id="<%= game_players[i].id %>"></span>

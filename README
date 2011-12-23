@@ -8,12 +8,12 @@ To play a game, its expected that the players will have bingo cards and markers.
 
 Conversion to Backbone/Coffeescript - core is done, working on peripheral items
 Outstanding:
-- players/game players
+- correctly show who won line/house after update
+- also re-enable line/house/another button after update
+- make summary page dynamic as well
 
 Bugs
-- occasional/persistent error about no new/game action
 - disable auto advance when winner line/house dialog open
-- error when not in a session, check it better
 - flash notice/error not appearing correctly
 - added rails admin, which lets logged in users view everything, need to amend it to provide a scoped view, ie only users sessions/games etc.
 
