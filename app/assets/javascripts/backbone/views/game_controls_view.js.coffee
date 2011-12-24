@@ -28,19 +28,19 @@ class BingoCaller.GameControlsView extends Backbone.View
     @model.autoToggle() if @model.get("auto_mode") == true
 
   render: =>
-    console.log("rendering controls view:",@model)
+#    console.log("rendering controls view:",@model)
     $(@el).html(@template( @model.toJSON() ))
 #   kick jqueryui styling into action - needed as we added button dynamically.
     $("#next_ball").button()
     $("#btn_auto").button()
     $("#btn_pause").button()
-    console.log "auto_mode = #{@model.get("auto_mode")}"
+#    console.log "auto_mode = #{@model.get("auto_mode")}"
     if @model.get("auto_mode") is false
-      console.log "auto mode is off"
+#      console.log "auto mode is off"
       btn_auto_enable = 'enable'
       btn_pause_enable = 'disable'
     else
-      console.log "auto mode is on"
+#      console.log "auto mode is on"
       btn_auto_enable = 'disable'
       btn_pause_enable = 'enable'
     $("#btn_auto").button(btn_auto_enable)
