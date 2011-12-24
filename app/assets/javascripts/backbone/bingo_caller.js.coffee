@@ -4,7 +4,22 @@
 #= require_tree ./views
 #= require_tree ./routers
 
-$('body').ajaxError( -> console.log "uh-oh, ajax error" )
+#$('body').ajaxError( -> console.log "uh-oh, ajax error" )
+
+$.ajaxSetup
+    error:  (x,e) ->
+      if x.status==0
+        console?.log 'You are offline!!\n Please Check Your Network.'
+      else if x.status==404
+        console?.log 'Requested URL not found.'
+      else if x.status==500
+        console?.log 'Internel Server Error.'
+      else if e=='parsererror'
+        console?.log 'Error.\nParsing JSON Request failed.'
+      else if e=='timeout'
+        console?.log 'Request Time out.'
+      else
+        console?.log 'Unknown Error.\n'+x.responseText
 
 window.BingoCaller =
   Models: {}

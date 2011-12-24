@@ -9,8 +9,7 @@ class BingoCaller.GamePlayersView extends Backbone.View
   initialize: ->
     @options.players.bind('reset',@render)
     @options.game_players.bind('reset',@render)
-    @options.game.bind('reset',@render)
-    @options.game.bind('change',@render)
+    @options.game.bind('all',@render)
 
   gameUpdatePlayer: (clickedButton) ->
     clickedButton.preventDefault();
@@ -49,8 +48,12 @@ class BingoCaller.GamePlayersView extends Backbone.View
   handleSavedOk: =>
     @options.players.fetch()
     @options.game_players.fetch()
+    location.reload()
 
   render: =>
+    if @options.players.length == 0
+      console?.log "no players yet, ignore render"
+      return
     console?.log "render game player/model:",@options
     context =
       players: @options.players.toJSON()

@@ -20,7 +20,6 @@ class DeviseCreateCallers < ActiveRecord::Migration
     # add_index :callers, :confirmation_token,   :unique => true
     # add_index :callers, :unlock_token,         :unique => true
 
-    Caller.new(:email => "chris@kimptoc.net", :password => "123456").save!
   end
 
   def self.down

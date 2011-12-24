@@ -19,10 +19,10 @@ BingoCaller::Application.routes.draw do
   #resources :called_numbers
 
 
-  match 'games/:id/next_ball' => 'games#next_ball'
-  match 'games/:id/auto_toggle' => 'games#auto_toggle'
-  match 'games/:id/record_winner_line' => 'games#record_winner_line'
-  match 'games/:id/record_winner_bingo' => 'games#record_winner_bingo'
+  match 'games/:id/next_ball' => 'games#next_ball', :via => [:post]
+  match 'games/:id/auto_toggle' => 'games#auto_toggle', :via => [:post]
+  match 'games/:id/record_winner_line' => 'games#record_winner_line', :via => [:post]
+  match 'games/:id/record_winner_bingo' => 'games#record_winner_bingo', :via => [:post]
   match 'games/:id/same_again' => 'games#same_again'
   match 'games/:id/status' => 'games#game_status'
 

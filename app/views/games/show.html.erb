@@ -2,7 +2,7 @@
 <script type="text/javascript">
 
 	$(function() {
-        bingo = BingoCaller.start(<%= caller_session['auto'].present? %>,
+        bingo = BingoCaller.start(<%= session['auto'].present? %>,
                 "<%= params['stab'] %>",
                 '<%= url_for :action => :next_ball %>',
                 <%= @game.secs_between_calls %>,<%= @game.id %>, <%= @game.bingo_session_id %>);

@@ -7,8 +7,10 @@ class GamesController < ApplicationController
 
     @game.next_ball
 
-    redirect_to @game
-
+    #redirect_to @game
+    respond_to do |format|
+      format.json { render :json => { :result => "ok" } }
+    end
    end
 
   def record_winner_line
@@ -19,7 +21,10 @@ class GamesController < ApplicationController
 
     @game.save!
     
-    redirect_to @game
+    #redirect_to @game
+    respond_to do |format|
+      format.json { render :json => { :result => "ok" } }
+    end
   end
 
   def record_winner_bingo
@@ -30,7 +35,10 @@ class GamesController < ApplicationController
 
     @game.save!
 
-    redirect_to @game
+    #redirect_to @game
+    respond_to do |format|
+      format.json { render :json => { :result => "ok" } }
+    end
   end
 
   def same_again
@@ -44,8 +52,11 @@ class GamesController < ApplicationController
 
   def auto_toggle
     @game = Game.find(params[:id])
-    caller_session['auto'] = ! (caller_session['auto'] || false)
-    redirect_to @game
+    session['auto'] = ! (session['auto'] || false)
+    #redirect_to @game
+    respond_to do |format|
+      format.json { render :json => { :result => "ok" } }
+    end
   end
 
   #def enable_auto
@@ -97,11 +108,11 @@ class GamesController < ApplicationController
     @player_game = PlayerGame.new
     @player_game.game = @game
 
-    auto = caller_session['auto']
+    auto = session['auto']
     if auto == nil
       auto = false
     end
-    caller_session['auto'] = auto
+    session['auto'] = auto
     
     #hack, should scan dirs for options and choose from them
     #and/or give user choice of which caller to use...

@@ -3,8 +3,7 @@ class BingoCaller.GameLastBallView extends Backbone.View
   el: '#game-last-ball'
 
   initialize: ->
-    @model.bind('change',@render)
-    @model.bind('reset',@render)
+    @model.bind('all',@render)
 
   render: =>
     console?.log("render last ball/model:",@model)

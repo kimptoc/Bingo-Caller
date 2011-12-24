@@ -8,9 +8,10 @@ To play a game, its expected that the players will have bingo cards and markers.
 
 Conversion to Backbone/Coffeescript - core is done, working on peripheral items
 Outstanding:
-- correctly show who won line/house after update
-- also re-enable line/house/another button after update
 - make summary page dynamic as well
+- get player info for line/house popup from correct model and bind to it
+- correctly show who won line/house after update
+- make house/line dialog backbone'd
 
 Bugs
 - disable auto advance when winner line/house dialog open
