@@ -43,6 +43,7 @@ class Game < ActiveRecord::Base
     new_game.max_balls = game.max_balls
     new_game.bingo_session = game.bingo_session
     new_game.game_number = game.game_number + 1
+    new_game.secs_between_calls = game.secs_between_calls
     new_game.save!
     game.player_games.each do |p|
       puts "adding pg"

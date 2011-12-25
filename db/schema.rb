@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(:version => 20111119213719) do
     t.integer  "bingo_session_id"
     t.integer  "player_with_first_line_id"
     t.integer  "player_with_bingo_id"
-    t.integer  "secs_between_calls",        :default => 5
+    t.integer  "secs_between_calls",        :default => 7
     t.integer  "game_number",               :default => 1
     t.datetime "created_at"
     t.datetime "updated_at"
