@@ -2,17 +2,17 @@
 
 <p>
   <b>Cost per card:</b>
-  <%= @bingo_session.cost_per_card %>
+  <%= number_to_currency(@bingo_session.cost_per_card , :unit => "&pound;") %>
 </p>
 
 <p>
-  <b>Line prize (%):</b>
-  <%= @bingo_session.line_prize_per_card %>
+  <b>Line prize:</b>
+  <%= number_to_currency(@bingo_session.line_prize_per_card , :unit => "&pound;") %>
 </p>
 
 <p>
-  <b>House prize (%):</b>
-  <%= @bingo_session.bingo_prize_per_card %>
+  <b>House prize:</b>
+  <%= number_to_currency(@bingo_session.bingo_prize_per_card , :unit => "&pound;") %>
 </p>
 
 <p>

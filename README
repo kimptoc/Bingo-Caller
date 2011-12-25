@@ -10,10 +10,7 @@ Conversion to Backbone/Coffeescript - core is done, working on peripheral items
 Outstanding:
 - make summary page dynamic as well
 - make house/line dialog backbone'd
-- turn off auto mode after game won
 
-Bugs 4 Today
-- on new game reset auto (turn off when starting a new game)
 
 Bugs
 - flash notice/error not appearing correctly
@@ -24,6 +21,7 @@ To Do
 - track what people put into kitty, eg if no change - for example Joe only has a fiver, no coins, track his money
 - option to void line/house (basically, there is no winner, carry forward prize pool to next game)
 
+- remove tabs, fit players/summary all on one page
 - error message when no players defined if trying to do winner of line/house
 - dont recall number on reload, or use js for some actions (currently when you click some of the buttons, the numbers are re-called - gets confusing).
 - no auto page reload when mouse is moving (perhaps need 5seconds or so quiet time before starting)
@@ -31,7 +29,6 @@ To Do
 - ability to amend the prizes per game 
 - show net winnings (money won less money spent )
 - show winnings per game
-- show date/time of bingo session on various pages, home, show, game
 - in general, user can see if session is public or their own
 - can use edit/nextball only if its the current users game
 - only allow creater of game to advance to next ball

@@ -11,6 +11,7 @@ Get a little help running your Bingo game - this site will call the numbers, tra
     <th>House prize (%)</th>
     <th>Session name</th>
     <th>Num Players</th>
+    <th>Num Games</th>
     <th></th>
     <th></th>
     <th></th>
@@ -21,11 +22,12 @@ Get a little help running your Bingo game - this site will call the numbers, tra
 <% @my_sessions.each do |bingo_session| %>
   <tr>
     <td><%= bingo_session.id %> <br> <%= bingo_session.created_at.strftime("%e %b %Y %H:%M") %></td>
-    <td><%= bingo_session.cost_per_card %></td>
-    <td><%= bingo_session.line_prize_per_card %></td>
-    <td><%= bingo_session.bingo_prize_per_card %></td>
+    <td><%= number_to_currency(bingo_session.cost_per_card , :unit => "&pound;") %></td>
+    <td><%= number_to_currency(bingo_session.line_prize_per_card, :unit => "&pound;")  %></td>
+    <td><%= number_to_currency(bingo_session.bingo_prize_per_card, :unit => "&pound;")  %></td>
     <td><%= bingo_session.session_name %></td>
     <td><%= bingo_session.players.count %></td>
+    <td><%= bingo_session.games.count %></td>
     <td><%= link_to 'Show', bingo_session %></td>
 <td>	<%= link_to 'Current Game', :action => :show_current_game, :id => bingo_session.id %> </td>
 <td>	<%= link_to 'New Game', new_game_path %> </td>
