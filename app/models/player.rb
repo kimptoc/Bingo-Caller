@@ -6,7 +6,27 @@ class Player < ActiveRecord::Base
   def to_s
     return name
   end
-  
+
+  def num_lines
+    lines = 0
+    player_games.each do |g|
+      if g.game.player_with_first_line and g.game.player_with_first_line.id == id
+        lines += 1
+      end
+    end
+    return lines
+  end
+
+  def num_bingos
+    bingos = 0
+    player_games.each do |g|
+      if g.game.player_with_bingo and g.game.player_with_bingo.id == id
+        bingos += 1
+      end
+    end
+    return bingos
+  end
+
   def costs
     p_costs = 0
     player_games.each do |g|

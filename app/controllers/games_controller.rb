@@ -42,6 +42,7 @@ class GamesController < ApplicationController
   end
 
   def same_again
+    session['auto'] = false
     game = Game.find(params[:id])
 
     new_game = Game.copy_game game
@@ -138,6 +139,7 @@ class GamesController < ApplicationController
   # GET /games/new
   # GET /games/new.xml
   def new
+    session['auto'] = false
     @game = Game.new
 
     bs_id = params['bingo_session_id']
@@ -164,6 +166,7 @@ class GamesController < ApplicationController
   # POST /games
   # POST /games.xml
   def create
+    session['auto'] = false
     @game = Game.new(params[:game])
 
     if @game.bingo_session == nil

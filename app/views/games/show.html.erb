@@ -56,8 +56,8 @@
     <p>
       Games played: <%= @game.bingo_session.games.count %>
     </p>
-    <table>
-      <tr><th>Game</th><th>Winner: Line</th><th>Winner: Bingo</th><th>Players</th></tr>
+    <table class="summary">
+      <tr><th>Game</th><th>Line?</th><th>Bingo?</th><th>Players</th></tr>
       <% @game.bingo_session.games.each do |g| %>
         <tr><td><%= g.game_number %></td>
           <td><%= if g.player_with_first_line
@@ -73,12 +73,14 @@
       <% end %>
     </table>
 
-    <table>
-      <tr><th>Player</th><th>Costs</th><th>Winnings</th></tr>
+    <table class="summary">
+      <tr><th>Player</th><th>Costs</th><th>Winnings</th><th>Lines</th><th>Bingo</th></tr>
       <% @game.bingo_session.players.each do |p| %>
       <tr><td><%= p.name %></td>
-        <td><%= p.costs %></td>
-        <td><%= p.winnings %></td>
+        <td><%= number_to_currency(p.costs, :unit => "&pound;") %></td>
+        <td><%= number_to_currency(p.winnings, :unit => "&pound;") %></td>
+        <td><%= p.num_lines %></td>
+        <td><%= p.num_bingos %></td>
       </tr>
       <% end %>
     </table>

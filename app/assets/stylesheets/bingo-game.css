@@ -14,3 +14,8 @@ li .ui-button-text {
     font-weight:bold;
     color:yellow;
 }
+
+.summary th,.summary td {
+    padding: 5px;
+    text-align: right;
+}
