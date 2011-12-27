@@ -15,8 +15,12 @@ Outstanding:
 Bugs
 - flash notice/error not appearing correctly
 - added rails admin, which lets logged in users view everything, need to amend it to provide a scoped view, ie only users sessions/games etc.
+- audio skipping intermittently on safari, maybe a browser bug...
+- delete player from a game is not working, buttons disables but no page reload
+- line/bingo popup should appear higher on page, or at top - so that you can see the called numbers bit at the bottom
 
 To Do
+- add in keyboard.js for keyboard controls, space=pause, w=winner (line or house)...
 - joint/multiple winners (currently all db/views assume only 1 person can win - this is not true)
 - track what people put into kitty, eg if no change - for example Joe only has a fiver, no coins, track his money
 - option to void line/house (basically, there is no winner, carry forward prize pool to next game)
