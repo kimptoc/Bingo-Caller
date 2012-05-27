@@ -1,5 +1,4 @@
-#source 'http://rubygems.org'
-source 'http://rubygems.dev'
+source 'http://rubygems.org'
 
 gem 'rails'
 
