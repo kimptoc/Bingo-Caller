@@ -1,13 +1,8 @@
 <div class="grid_5" id="accordionTR">
     <h3><a href="#">Last Few Balls</a></h3>
-    <div style="font-size:larger">
     <ul>
     <% for (var i = 0; i < Math.min(called_balls.length,7); i++) { %>
-
-    <!--< % @game.called_numbers.reverse[0..7].each { | cn | %>-->
-      <li><%= called_balls[i] %></li>
+      <li class="last_few_balls"><%= called_balls[i] %></li>
     <% }; %>
     </ul>
-
-    </div>
 </div>

@@ -19,3 +19,7 @@ li .ui-button-text {
     padding: 5px;
     text-align: right;
 }
+
+.last_few_balls {
+	font-size: 120%;
+}
