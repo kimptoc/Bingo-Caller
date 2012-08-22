@@ -6,20 +6,24 @@ class BingoCaller.GameLastBallView extends Backbone.View
     @model.bind('change',@render)
 
   render: =>
-#    console?.log "render last ball/model:",@model
+    console?.log "render last ball/model:",@model
     $(@el).html(@template( @model.toJSON() ))
 #    console?.log "template done"
     $("#accordionTL").accordion()
     action_button = $("#action-button")
+    KeyboardJS.unbind.key("enter")
     if ! @model.get "player_with_first_line_id"
       action_button.text("Line?")
       action_button.click @handleWinnerLine
+      KeyboardJS.bind.key('enter', @handleWinnerLine)
     else if ! @model.get "player_with_bingo_id"
       action_button.text("House?")
       action_button.click @handleWinnerHouse
+      KeyboardJS.bind.key('enter', @handleWinnerHouse)
     else
       action_button.text("Another?")
       action_button.click @anotherGame
+      KeyboardJS.bind.key('enter', @anotherGame)
     action_button.button()
 #    console?.log "render all done"
 
