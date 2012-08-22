@@ -2,13 +2,16 @@ This is a basic bingo calling web app, written in Rails 3.
 
 The aim is for it to run on the iPad, anywhere else is a bonus, for now.
 
-Test site on Heroku is here http://bingo-caller.heroku.com/games
+Test site on Heroku is here http://bingo-caller.heroku.com/games [currently not working, failed heroku db/pg upgrade - will try a re-install]
 
 To play a game, its expected that the players will have bingo cards and markers.  This site will then track the balls called, who has won and winnings, if played for money.
 
 
 Conversion to Backbone/Coffeescript - core is done, working on peripheral items
 
+Ideas
+- louder sounds
+- multiple clients to same game, only one advances it, pushes updates to others
 
 Outstanding:
 - make summary page dynamic as well
@@ -16,22 +19,25 @@ Outstanding:
 
 
 Bugs
-- flash notice/error not appearing correctly
-- added rails admin, which lets logged in users view everything, need to amend it to provide a scoped view, ie only users sessions/games etc.
-- audio skipping intermittently on safari, maybe a browser bug...
 - delete player from a game is not working, buttons disables but no page reload
 - line/bingo popup should appear higher on page, or at top - so that you can see the called numbers bit at the bottom
 
+- flash notice/error not appearing correctly
+- added rails admin, which lets logged in users view everything, need to amend it to provide a scoped view, ie only users sessions/games etc.
+- audio skipping intermittently on safari, maybe a browser bug...
+
 To Do
 - add in keyboard.js for keyboard controls, space=pause, w=winner (line or house)...
+- dont recall number on reload, or use js for some actions (currently when you click some of the buttons, the numbers are re-called - gets confusing).
+- no auto page reload when mouse is moving (perhaps need 5seconds or so quiet time before starting)
+
 - joint/multiple winners (currently all db/views assume only 1 person can win - this is not true)
+
 - track what people put into kitty, eg if no change - for example Joe only has a fiver, no coins, track his money
 - option to void line/house (basically, there is no winner, carry forward prize pool to next game)
 
 - remove tabs, fit players/summary all on one page
 - error message when no players defined if trying to do winner of line/house
-- dont recall number on reload, or use js for some actions (currently when you click some of the buttons, the numbers are re-called - gets confusing).
-- no auto page reload when mouse is moving (perhaps need 5seconds or so quiet time before starting)
 - ability to amend who won a game/line
 - ability to amend the prizes per game 
 - show net winnings (money won less money spent )
