@@ -39,18 +39,26 @@ class BingoCaller.GameLastBallView extends Backbone.View
     $("#action-button").button('disable')
     house_dialog = $( dialog_id )
     house_dialog.dialog
+      title: "Who Won?"
       resizable: false
       height:180
+      position: [900,100]
       modal: true
+      closeOnEscape: false
+      close: =>
+#        house_dialog.dialog "close" 
+        $("#action-button").button('enable')
+        BingoCaller.cancel_auto = false
       buttons:
         "Save winner": =>
-          house_dialog.dialog "close"
           model_func $(result_id).val()
-          BingoCaller.cancel_auto = false
-        Cancel: ->
-          $( this ).dialog( "close" )
-          $("#action-button").button('enable')
-          BingoCaller.cancel_auto = false
+          house_dialog.dialog "close"
+#          BingoCaller.cancel_auto = false
+        Cancel: =>
+          house_dialog.dialog "close"
+#          $( this ).dialog( "close" )
+#          $("#action-button").button('enable')
+#          BingoCaller.cancel_auto = false
 
   anotherGame: =>
     $("#action-button").button('disable')

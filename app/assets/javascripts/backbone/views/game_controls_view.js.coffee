@@ -45,3 +45,7 @@ class BingoCaller.GameControlsView extends Backbone.View
       btn_pause_enable = 'enable'
     $("#btn_auto").button(btn_auto_enable)
     $("#btn_pause").button(btn_pause_enable)
+    KeyboardJS.bind.key('n', @nextBall)
+    KeyboardJS.bind.key('a', @autoOn)
+    KeyboardJS.bind.key('p', @autoOff)
+
