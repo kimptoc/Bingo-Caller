@@ -10,25 +10,21 @@ To play a game, its expected that the players will have bingo cards and markers.
 Conversion to Backbone/Coffeescript - core is done, working on peripheral items
 
 Ideas
-- louder sounds
+- louder sounds, eg via audacity
 - multiple clients to same game, only one advances it, pushes updates to others
 
 Outstanding:
-- make summary page dynamic as well
-- make house/line dialog backbone'd
+- make summary tab dynamic as well
 
 
 Bugs
 - delete player from a game is not working, buttons disables but no page reload
-- line/bingo popup should appear higher on page, or at top - so that you can see the called numbers bit at the bottom
 
 - flash notice/error not appearing correctly
 - added rails admin, which lets logged in users view everything, need to amend it to provide a scoped view, ie only users sessions/games etc.
 - audio skipping intermittently on safari, maybe a browser bug...
 
 To Do
-- add in keyboard.js for keyboard controls, space=pause, w=winner (line or house)...
-- dont recall number on reload, or use js for some actions (currently when you click some of the buttons, the numbers are re-called - gets confusing).
 - no auto page reload when mouse is moving (perhaps need 5seconds or so quiet time before starting)
 
 - joint/multiple winners (currently all db/views assume only 1 person can win - this is not true)
