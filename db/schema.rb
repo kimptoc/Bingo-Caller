@@ -20,34 +20,34 @@ ActiveRecord::Schema.define(:version => 20111119213719) do
     t.string   "session_name"
     t.boolean  "is_public",            :default => false
     t.integer  "caller_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                              :null => false
+    t.datetime "updated_at",                              :null => false
   end
 
   create_table "called_numbers", :force => true do |t|
     t.integer  "game_id"
     t.integer  "called_ball"
     t.datetime "called_time"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "callers", :force => true do |t|
-    t.string   "email",                               :default => "", :null => false
-    t.string   "encrypted_password",   :limit => 128, :default => "", :null => false
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
     t.string   "reset_password_token"
-    t.string   "remember_token"
+    t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                       :default => 0
+    t.integer  "sign_in_count",          :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.integer  "failed_attempts",                     :default => 0
+    t.integer  "failed_attempts",        :default => 0
     t.string   "unlock_token"
     t.datetime "locked_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
     t.string   "name"
   end
 
@@ -59,10 +59,10 @@ ActiveRecord::Schema.define(:version => 20111119213719) do
     t.integer  "bingo_session_id"
     t.integer  "player_with_first_line_id"
     t.integer  "player_with_bingo_id"
-    t.integer  "secs_between_calls",        :default => 7
+    t.integer  "secs_between_calls",        :default => 6
     t.integer  "game_number",               :default => 1
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
   end
 
   create_table "histories", :force => true do |t|
@@ -72,8 +72,8 @@ ActiveRecord::Schema.define(:version => 20111119213719) do
     t.string   "table"
     t.integer  "month",      :limit => 2
     t.integer  "year",       :limit => 5
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
   end
 
   add_index "histories", ["item", "table", "month", "year"], :name => "index_histories_on_item_and_table_and_month_and_year"
@@ -82,8 +82,8 @@ ActiveRecord::Schema.define(:version => 20111119213719) do
     t.integer  "player_id"
     t.integer  "game_id"
     t.integer  "cards_played", :default => 3
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
   end
 
   add_index "player_games", ["player_id", "game_id"], :name => "index_player_games_on_player_id_and_game_id", :unique => true
@@ -92,8 +92,8 @@ ActiveRecord::Schema.define(:version => 20111119213719) do
     t.integer  "bingo_session_id"
     t.string   "name"
     t.integer  "caller_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "rails_admin_histories", :force => true do |t|
@@ -103,8 +103,8 @@ ActiveRecord::Schema.define(:version => 20111119213719) do
     t.string   "table"
     t.integer  "month",      :limit => 2
     t.integer  "year",       :limit => 5
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
   end
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
