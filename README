@@ -2,7 +2,7 @@ This is a basic bingo calling web app, written in Rails 3.
 
 The aim is for it to run on the iPad, anywhere else is a bonus, for now.
 
-Test site on Heroku is here http://bingo-caller.heroku.com/games [currently not working, failed heroku db/pg upgrade - will try a re-install]
+Test site on Heroku is here http://bingo-caller.heroku.com/games 
 
 To play a game, its expected that the players will have bingo cards and markers.  This site will then track the balls called, who has won and winnings, if played for money.
 
